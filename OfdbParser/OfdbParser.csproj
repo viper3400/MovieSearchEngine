@@ -34,8 +34,9 @@
       <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="libjfunx">
-      <HintPath>..\..\..\Dropbox\Entwicklung\libjfunx\libjfunx.dll</HintPath>
+    <Reference Include="libjfunx, Version=3.0.0.27708, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ch.jaxx.libjfunx.dll.3.0.0\lib\libjfunx.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
