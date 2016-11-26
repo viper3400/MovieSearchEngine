@@ -2,7 +2,7 @@
 
 Please read and accept this terms:
 
-* This is intentend for PERSONAL USE ONLY
+* This is intended for PERSONAL USE ONLY
 * You should RESPECT the conditions for using ofdb.de (http://www.ofdb.de/view.php?page=faq#a32)
 * You should AVOID extensive usage of this code (Catch data only if it's neccessary to avoid high loads on ofdb servers.)
 * Visit http://www.ofdb.de once in a while and honour the great work of the OFDB team.
@@ -36,5 +36,7 @@ So this is not maintained any longer.
 // Init a new instance
 MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
 ```
+
+The UIs within the solution are for testing purpose only and not intended for production by no means.
 
 This piece of work makes usage of the Html Agility Pack: https://htmlagilitypack.codeplex.com/
