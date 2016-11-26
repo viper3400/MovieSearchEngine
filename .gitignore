@@ -1,0 +1,10 @@
+AutoMapper.3.2.1
+TestResults
+/*.suo
+bin
+/obj
+/
+Debug
+HtmlAgilityPack.1.4.9
+/.vs/MovieSearchEngine/v14/.suo
+/packages/HtmlAgilityPack.1.4.9.5

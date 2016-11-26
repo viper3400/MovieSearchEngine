@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofdbgw>
+<resultat>
+<titel>Hitch - Der Date Doktor</titel>
+<jahr>text</jahr>
+<bild>http://img.ofdb.de/film/69/69878.jpg</bild>
+<imdbid>text</imdbid>
+<bewertung>
+<note>text</note>
+<stimmen>text</stimmen>
+<platz>text</platz>
+</bewertung>
+<regie>
+<person>
+<id>text</id>
+<name>Andy Tennant</name>
+</person>
+</regie>
+<secondunitregie></secondunitregie>
+<produzent>
+<person>
+<id>text</id>
+<name>Will Smith</name>
+</person>
+</produzent>
+<drehbuch></drehbuch>
+<cut></cut>
+<soundtrack>
+<person>
+<id>text</id>
+<name>text</name>
+</person>
+<person>
+<id>text</id>
+<name>text</name>
+</person>
+<person>
+<id>text</id>
+<name>Usher Raymond</name>
+</person>
+</soundtrack>
+<genre>
+<titel>Komödie</titel>
+<titel>Liebe/Romantik</titel>
+</genre>
+<kurzbeschreibung>Der Heiratsvermittler Alex "Hitch" Hitchens (Will Smith) schafft es, jedem Mann, auch wenn es anfangs noch so hoffnungslos erscheint, ein Date mit einer</kurzbeschreibung>
+<beschreibung>Der Heiratsvermittler Alex "Hitch" Hitchens (Will Smith) schafft es, jedem Mann, auch wenn es anfangs noch so hoffnungslos erscheint, ein Date mit einer Frau seiner Wahl zu verschaffen. Dieser Tatsache ist er sich so sicher, dass er sogar eine Geld-zurück-Garantie gibt, wenn sich spätestens nach Date Nummer 3 noch keine Beziehung anbahnt. Doch überall gibt es Ausnahmen und in diesem Fall ist das der Versager Albert (Kevin James). Auch nach etlichen Unterrichtsstunden bei Hitch ist er nicht in der Lage, bei seiner Traumfrau zu landen. Zwischenzeitlich bekommt Hitch es auch noch mit der Undercover-Journalistin Sara (Eva Mendez) zu tun, die endlich Licht in das Geheimnis von seiner Arbeit bringen will. Genauso wie er selbst hat Sara die Hoffnung auf die Liebe aufgegeben, nachdem sie einst bitter enttäuscht wurde. Doch nach und nach kommen die beiden sich näher und Hitch muss selber erleben, wie es ist, wenn man vor seiner Angebeteten kein vernünftiges Wort herausbekommt...</beschreibung>
+<besetzung>
+<person>
+<id>text</id>
+<name>Will Smith</name>
+<rolle>Alex 'Hitch' Hitchens</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Eva Mendes</name>
+<rolle>Sara</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Kevin James</name>
+<rolle>Albert</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Amber Valletta</name>
+<rolle>Allegra Cole</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Julie Ann Emery</name>
+<rolle>Casey</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Adam Arkin</name>
+<rolle>Max</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Robinne Lee</name>
+<rolle>Cressida Baylor</rolle>
+</person>
+<person>
+<id>15326</id>
+<name>Nathan Lee Graham</name>
+<rolle>Geoff</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Michael Rapaport</name>
+<rolle>Ben</rolle>
+</person>
+<person>
+<id>text</id>
+<name>Jeffrey Donovan</name>
+<rolle>Vance Munson</rolle>
+</person>
+<person>
+<id>3733</id>
+<name>Paula Patton</name>
+<rolle>Mandy</rolle>
+</person>
+<person>
+<id>47983</id>
+<name>Philip Bosco</name>
+<rolle>Mr. O'Brian</rolle>
+</person>
+<person>
+<id>4975</id>
+<name>Kevin Sussman</name>
+<rolle>Neil</rolle>
+</person>
+<person>
+<id>20608</id>
+<name>Maria Thayer</name>
+<rolle>Lisa</rolle>
+</person>
+<person>
+<id>23442</id>
+<name>Ato Essandoh</name>
+<rolle>Tanis</rolle>
+</person>
+<person>
+<id>7105</id>
+<name>Marlyne Afflack</name>
+<rolle>Stephanie</rolle>
+</person>
+<person>
+<id>9892</id>
+<name>Jenna Stern</name>
+<rolle>Louise</rolle>
+</person>
+<person>
+<id>8852</id>
+<name>Austin Lysy</name>
+<rolle>Magnus Forrester</rolle>
+</person>
+<person>
+<id>40253</id>
+<name>Adam LeFevre</name>
+<rolle>Speed Dating Guy</rolle>
+</person>
+<person>
+<id>28410</id>
+<name>Joe Lo Truglio</name>
+<rolle>Music Lover Guy</rolle>
+</person>
+<person>
+<id>28409</id>
+<name>Ptolemy Slocum</name>
+<rolle>Ron</rolle>
+</person>
+<person>
+<id>28407</id>
+<name>Matt Servitto</name>
+<rolle>Eddie</rolle>
+</person>
+<person>
+<id>28405</id>
+<name>Maulik Pancholy</name>
+<rolle>Raoul</rolle>
+</person>
+<person>
+<id>51937</id>
+<name>Caprice Benedetti</name>
+<rolle>Gorgeous Wife</rolle>
+</person>
+<person>
+<id>28402</id>
+<name>Tony Travis</name>
+<rolle>Nebishy Husband</rolle>
+</person>
+<person>
+<id>9699</id>
+<name>Mercedes Renard</name>
+<rolle>Maria Melas Reda</rolle>
+</person>
+<person>
+<id>28412</id>
+<name>Tobias Truvillion</name>
+<rolle>Kurt</rolle>
+</person>
+<person>
+<id>13477</id>
+<name>Rain Phoenix</name>
+<rolle>Kate</rolle>
+</person>
+<person>
+<id>33779</id>
+<name>Darrell Foster</name>
+<rolle>Bartender</rolle>
+</person>
+<person>
+<id>25027</id>
+<name>Casper Andreas</name>
+<rolle>Sebastian</rolle>
+</person>
+<person>
+<id>37599</id>
+<name>Anya Avaeva</name>
+<rolle>Hot Date</rolle>
+</person>
+<person>
+<id>28423</id>
+<name>Keith Chambers</name>
+<rolle>Bartender #2</rolle>
+</person>
+<person>
+<id>25226</id>
+<name>Thomas Daniel</name>
+<rolle>Bar Patron</rolle>
+</person>
+<person>
+<id>37713</id>
+<name>Maria-Jose Davo</name>
+<rolle>Club Girl</rolle>
+</person>
+<person>
+<id>28422</id>
+<name>Vincent De Paul</name>
+<rolle>Amp Lounge Man</rolle>
+</person>
+<person>
+<id>16671</id>
+<name>Michelle DiBenedetti</name>
+<rolle>First Date Couple</rolle>
+</person>
+<person>
+<id>25581</id>
+<name>Scott Hatfield</name>
+<rolle>Albert's Wedding Guest</rolle>
+</person>
+<person>
+<id>4400</id>
+<name>Rebecca Mader</name>
+<rolle>Kim</rolle>
+</person>
+<person>
+<id>28419</id>
+<name>John O. Nelson</name>
+<rolle>Statistician</rolle>
+</person>
+<person>
+<id>28418</id>
+<name>Trevor Richardson</name>
+<rolle>Groomsman</rolle>
+</person>
+<person>
+<id>28417</id>
+<name>Amro Salama</name>
+<rolle>Waiter</rolle>
+</person>
+<person>
+<id>20135</id>
+<name>Olivia Weston</name>
+<rolle>Beautiful Yatch Owner</rolle>
+</person>
+<person>
+<id>28415</id>
+<name>Joe Wissler</name>
+<rolle>Wedding Guest</rolle>
+</person>
+<person>
+<id>28413</id>
+<name>Alexander Wraith</name>
+<rolle>Bartender</rolle>
+</person>
+<person>
+<id>11076</id>
+<name>Shane Wright</name>
+<rolle>Fan Leaving MSG</rolle>
+</person>
+<person>
+<id></id>
+<name>Navia Nguyen</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Matt Malloy</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jack Hartnett</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>David Wike</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Frederick B. Owens</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Kahan James</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Amy Hohn</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Mimi Weddell</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jose Llana</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Niels Koizumi</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Chris Santos</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Ryan Cross</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jeffrey Carlson</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Henry Haile</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Remy K. Selma</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Beau Sia</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Mika Nishida</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Trevor Oswalt</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Douglas J. Aguirre</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Anthony Amodeo</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Brielle Barbusca</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Adam Bertocci</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Andre Blair</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Aneikit Bonnel</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Kimberly Cash</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Valbona Coba</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Michelle Deighton</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Cesar Di Parra</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Mike Fitzgerald</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Alexandra Gizela</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Darryl Reuben Hall</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Lou Irizarry</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Shane Warren Jones</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Rick Kain</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Arnold Y. Kim</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Bill Kotsatos</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Alexa Lane</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Debbie Lang</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Evan Leone</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Joanna Lu</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Bobby Lundon</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Brewster McCall</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Tanda Mercer</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Amy Metroka</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Kevin Kean Murphy</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Dwight Allen O'Neal</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jennifer Pedersen</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Nick Poltoranin</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Nicolas Quilter</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Dawn Ressy</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Michalina Scorzelli</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Ava Lee Scott</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jennifer Scott</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Cameron Stevens</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Jaclyn Tommer</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Tim Tyrrell</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Keri Uribe</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Kyle Willshire</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Mike Yedwab</name>
+<rolle></rolle>
+</person>
+<person>
+<id></id>
+<name>Dianne Zaremba</name>
+<rolle></rolle>
+</person>
+</besetzung>
+<produktionsland>
+<name>USA</name>
+</produktionsland>
+<alternativ>Hitch</alternativ>
+<fassungen>
+<titel>
+<land>Deutschland</land>
+<id>69878;262098</id>
+<name>DVD: Sony Pictures (Girls Night)</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;235727</id>
+<name>DVD: Sony Pictures (Second Date Box)</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;138582</id>
+<name>DVD: Sony Pictures Home Entertainment</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;203522</id>
+<name>Blu-ray Disc: Sony</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;144157</id>
+<name>UMD: Sony Pictures Home Entertainment</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;156310</id>
+<name>Video: Sony Pictures Home Entertainment</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;123915</id>
+<name>Kino: Columbia TriStar</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;122720</id>
+<name>Kino: Columbia TriStar (Berlinale)</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;224453</id>
+<name>Free-TV: PRO 7</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;181948</id>
+<name>Pay-TV: Premiere - P1</name>
+</titel>
+<titel>
+<land>Deutschland</land>
+<id>69878;156309</id>
+<name>Pay-TV: Premiere Direkt 1</name>
+</titel>
+<titel>
+<land>Frankreich</land>
+<id>69878;135508</id>
+<name>Kino: Columbia Tristar</name>
+</titel>
+<titel>
+<land>Großbritannien</land>
+<id>69878;293298</id>
+<name>DVD: Sony (Double Feature)</name>
+</titel>
+<titel>
+<land>Großbritannien</land>
+<id>69878;142326</id>
+<name>DVD: Sony Pictures</name>
+</titel>
+<titel>
+<land>Großbritannien</land>
+<id>69878;270574</id>
+<name>Blu-ray Disc: Sony</name>
+</titel>
+<titel>
+<land>Österreich</land>
+<id>69878;252173</id>
+<name>Free-TV: ORF 1</name>
+</titel>
+<titel>
+<land>Österreich</land>
+<id>69878;270421</id>
+<name>Free-TV: ORF 1</name>
+</titel>
+<titel>
+<land>Österreich</land>
+<id>69878;291137</id>
+<name>Free-TV: ORF 1</name>
+</titel>
+<titel>
+<land>Österreich</land>
+<id>69878;325579</id>
+<name>Free-TV: ORF eins</name>
+</titel>
+<titel>
+<land>Österreich</land>
+<id>69878;224530</id>
+<name>Free-TV: ORF1</name>
+</titel>
+<titel>
+<land>USA</land>
+<id>69878;142325</id>
+<name>DVD: Columbia TriStar</name>
+</titel>
+</fassungen>
+</resultat>
+</ofdbgw>

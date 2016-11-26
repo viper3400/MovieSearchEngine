@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfdbWebGatewayConnector", "OfdbWebGatewayConnector\OfdbWebGatewayConnector.csproj", "{960D2224-5046-4A5E-B34D-85E1916FB91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngineUnitTests", "MovieSearchEngineUnitTests\MovieSearchEngineUnitTests.csproj", "{8725D31C-AA40-4601-A325-F9FC50F26B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMetaEngine", "MovieMetaEngine\MovieMetaEngine.csproj", "{485800BA-7F0E-4D5E-9979-E0C5D5596D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMetaEngineGUI", "MovieMetaEngineGUI\MovieMetaEngineGUI.csproj", "{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfdbParser", "OfdbParser\OfdbParser.csproj", "{94E7599E-947E-45F4-926D-9D157D9C5E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{960D2224-5046-4A5E-B34D-85E1916FB91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960D2224-5046-4A5E-B34D-85E1916FB91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960D2224-5046-4A5E-B34D-85E1916FB91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960D2224-5046-4A5E-B34D-85E1916FB91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485800BA-7F0E-4D5E-9979-E0C5D5596D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485800BA-7F0E-4D5E-9979-E0C5D5596D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485800BA-7F0E-4D5E-9979-E0C5D5596D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485800BA-7F0E-4D5E-9979-E0C5D5596D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E7599E-947E-45F4-926D-9D157D9C5E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E7599E-947E-45F4-926D-9D157D9C5E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E7599E-947E-45F4-926D-9D157D9C5E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E7599E-947E-45F4-926D-9D157D9C5E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

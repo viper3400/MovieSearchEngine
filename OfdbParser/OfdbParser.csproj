@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94E7599E-947E-45F4-926D-9D157D9C5E0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OfdbParser</RootNamespace>
+    <AssemblyName>OfdbParser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="libjfunx">
+      <HintPath>..\..\..\Dropbox\Entwicklung\libjfunx\libjfunx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IResultResolver.cs" />
+    <Compile Include="OfdbMovieMetaSearch.cs" />
+    <Compile Include="OfdbResolvers\OfdbDetailsPlotResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbBarcodeSearchReferenceResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbBarcodeSearchTitleResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbBarcodeSearchYearResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbBarcodeSearchCoverImageResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbDetailsEdtionsResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbReferenceResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbDetailsActorsResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbDetailsCoverImageResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbDetailsPlotLinkResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbEditionRuntimeResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbPassThroughResolver.cs" />
+    <Compile Include="OfdbSearch.cs" />
+    <Compile Include="OfdbResolvers\OfdbSearchTitleCoverImageResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbSearchTitleReferenceResolver.cs" />
+    <Compile Include="OfdbSearchTitleResult.cs" />
+    <Compile Include="OfdbResolvers\OfdbSearchTitleTitleResolver.cs" />
+    <Compile Include="OfdbResolvers\OfdbSearchTitleYearResolver.cs" />
+    <Compile Include="OfdbXPathSelections.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="XPathHelper.cs" />
+    <Compile Include="XPathSelection.cs" />
+    <Compile Include="XPathRequest.cs" />
+    <Compile Include="XPathAgilityPackSelector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieMetaEngine\MovieMetaEngine.csproj">
+      <Project>{485800ba-7f0e-4d5e-9979-e0c5d5596d76}</Project>
+      <Name>MovieMetaEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

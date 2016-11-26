@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ofdbgw">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultat">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titel" type="xs:string" />
+              <xs:element name="jahr" type="xs:string" />
+              <xs:element name="bild" type="xs:string" />
+              <xs:element name="imdbid" type="xs:string" />
+              <xs:element name="bewertung">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="note" type="xs:string" />
+                    <xs:element name="stimmen" type="xs:string" />
+                    <xs:element name="platz" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="regie">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="person">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="secondunitregie" />
+              <xs:element name="produzent">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="person">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="drehbuch" />
+              <xs:element name="cut" />
+              <xs:element name="soundtrack">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="person">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="genre">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="titel" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="kurzbeschreibung" type="xs:string" />
+              <xs:element name="beschreibung" type="xs:string" />
+              <xs:element name="besetzung">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="person">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element name="rolle" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="produktionsland">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="alternativ" type="xs:string" />
+              <xs:element name="fassungen">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="titel">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="land" type="xs:string" />
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,48 @@
+﻿OfdbWebGatewayConnector
+=======================
+
+Der OfdbWebGatewayConnector nutzt einen 3rd party OFDB Webseitenparser: http://www.ofdbgw.org/.
+
+Die folgenden Aufrufe sind integriert:
+http://ofdbgw.org/search/[Titel]
+http://ofdbgw.org/movie/[OfdbId]
+http://ofdbgw.org/searchean/[eanCode]
+http://ofdbgw.org/fassung/[ofdbid;fassungsid]
+
+
+Ofdb gliedert einen Film in Fassungen auf. Bestimmte Informationen, wie zum Beispiel das Medium und die Länge des Films, sind bei OFDB fassungspezifisch und somit auch nur auf diesen Seiten abfragbar. Die alleinige Suche nach einer Ofdbod über die /movie/ API bringt als nicht alle benötigten Informationen mit. Auf der anderen Seiten fehlen in der Suche über die /fassung/ API essentielle Informationen, wie bsp. Genre oder Handlung.
+
+Die Suchen über die /search/ oder /searchean/ API bringen in der Regel nur in Frage kommende OFDB-Ids für die weitere Suche zurück, wobei die Suche über das /searchean/ API normalerweise nur ein Ergebnis inkl. der Fassung zurückgibt. Bei der Suche über /search/ sind noch keine Informationen über Fassungen verfügbar.
+
+/search/ --> /movie/ --> /fassung/
+/searchean/ --> /movie/
+			--> /fassung/
+			
+Es muss also in jedem Fall eine mehrstufige Suche duchgeführt werden, selbst wenn Ids bereits bekannt sind.
+
+Es kommt hinzu, dass die Handlung nur in der /movie/ API zu finden ist. Bei der Abfrage der /fassung/ ist diese nicht mehr vorhanden.
+
+LÄNGE / RUNTIME / LAUFZEIT
+==========================
+Die Laufzeit eines Films kommt in unterschiedlichesten Formaten vor. Am Ende soll aber nur eine Ganzzahl mit der Anzahl Minuten herauskommen.
+Bekannte Formate:
+ 98:39 Min. (92:07 Min. o. A.)
+ 113:20 Min.
+ ca. 166 Min.
+
+Zum derzeitigen Zeitpunkt ist vollkommen unklar, ob es noch andere Formate gibt. Ausgehend von den bisher bekannten Formaten wird daher in einem ersten Schritt einfach der String vor dem ersten Doppelpunkt genommen. Ein entsprechendes Fehlerhandling soll alle Einträge loggen, die nicht dem erwarteten Format entsprechen.
+
+SCHNITTSTELLENÜBERLEGUNGEN
+==========================
+Damit folglich überhaupt alle Informationen von der Schnittstelle zurückgegeben werden können, muss immer die Kombination aus OFDBID und Fassungs-Id bekannt sein.
+Als Ergebnis einer solchen Suche muss also ein komplettes Ergebnis zurückkommen.
+
+
+
+BESONDERHEITEN
+==============
+- Bei der Suche über /seachean/ fehlt der Originaltitel
+
+
+
+
