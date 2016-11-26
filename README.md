@@ -37,6 +37,6 @@ So this is not maintained any longer.
 MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
 ```
 
-The UIs within the solution are for testing purpose only and not intended for production by no means.
+The UIs within the solution are for testing purpose only and by no means intended for production.
 
 This piece of work makes usage of the Html Agility Pack: https://htmlagilitypack.codeplex.com/
