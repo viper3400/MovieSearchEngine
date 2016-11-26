@@ -28,6 +28,8 @@ If you search a movie by its title, be aware that you probably need the complete
 When using OFDB the movie "The Avengers" is stored as "Avengers, The" for example. 
 You probably have to search this way round for getting a match.
 
+![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/model.png "Model")
+
 You could also init a search using the "OFDB Gateway XML / JSON Interface" (http://www.ofdbgw.org/). 
 This is what I've first integrated but I found that the gateway was not reliable for me. 
 So this is not maintained any longer.
