@@ -224,7 +224,7 @@ namespace MovieSearchEngineUnitTests
         [TestCategory(CAT_ONLINE)]
         public void OfdbSearch_SearchByTitleTest()
         {
-            var input = "Kreis";
+            var input = "Kreis, Der";
             var SUT = new OfdbSearch();
             var result = SUT.SearchByTitle(input);
 
