@@ -1,3 +1,7 @@
+
+**NOTE:**
+OFDB Parser is currently broken, see https://github.com/viper3400/MovieSearchEngine/issues/1. I'm already working on this issue and try to resolve this soon.
+
 # MovieSearchEngine
 
 Please read and accept this terms:
