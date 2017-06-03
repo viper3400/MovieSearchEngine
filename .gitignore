@@ -9,3 +9,5 @@ HtmlAgilityPack.1.4.9
 /.vs/MovieSearchEngine/v14/.suo
 /packages/HtmlAgilityPack.1.4.9.5
 /packages/ch.jaxx.libjfunx.dll.3.0.0
+*.suo
+/.vs/MovieSearchEngine/v15/.suo
