@@ -121,9 +121,9 @@ namespace MovieSearchEngineUnitTests
         [TestCategory(CAT_OFFLINE)]
         public void OfdbDetailsCoverImageResolverTest()
         {
-            var input = "<img src=\"http://img.ofdb.de/film/258/258134.jpg\" alt=\"Bestimmung - Divergent, Die Poster\" border=\"0\" width=\"120\" height=\"170\" itemprop=\"image\">";
+            var input = "<img src=\"images/film/258/258134.jpg\" alt=\"Bestimmung - Divergent, Die Poster\" border=\"0\" width=\"120\" height=\"170\" itemprop=\"image\">";
             input = XPathHelper.EscapeJavaScript(input);
-            var expected = "http://img.ofdb.de/film/258/258134.jpg";
+            var expected = "https://ssl.ofdb.de/images/film/258/258134.jpg";
             var SUT = new OfdbParser.OfdbResolvers.OfdbDetailsCoverImageResolver();
             var actual = SUT.Resolve(input);
 
@@ -253,9 +253,9 @@ namespace MovieSearchEngineUnitTests
             Assert.AreEqual("ofdb", actual.FirstOrDefault().MetaEngine);
             Assert.AreEqual("Interstellar", actual.FirstOrDefault().Title);
             Assert.AreEqual("2014", actual.FirstOrDefault().Year);
-            Assert.AreEqual("http://img.ofdb.de/film/268/268777.jpg", actual.FirstOrDefault().ImgUrl);
+            Assert.AreEqual("https://ssl.ofdb.de/images/film/268/268777.jpg", actual.FirstOrDefault().ImgUrl);
             Assert.AreEqual("268777;396788", actual.FirstOrDefault().Reference);
-            Assert.AreEqual("7.69", actual.FirstOrDefault().Rating);
+            Assert.AreEqual("7.67", actual.FirstOrDefault().Rating);
 
         }
     }
