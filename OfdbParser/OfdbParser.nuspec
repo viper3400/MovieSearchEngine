@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>viper3400</authors>
     <owners>viper3400</owners>
-    <licenseUrl>https://github.com/viper3400/MovieSearchEngine</licenseUrl>
+    <licenseUrl>https://github.com/viper3400/MovieSearchEngine/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/viper3400/MovieSearchEngine</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Library for collecting movie information from web databases.</description>
