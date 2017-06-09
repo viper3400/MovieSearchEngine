@@ -21,6 +21,8 @@
     </references>
   </metadata>
   <files>
+    <!-- Add a readme -->
+    <file src="readme.txt" target="" />
     <file src="bin\Debug\MovieMetaEngine.dll" target="lib\net45\" />
   </files> 
 </package>
