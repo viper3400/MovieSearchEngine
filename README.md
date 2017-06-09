@@ -41,4 +41,10 @@ MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovi
 
 The UIs within the solution are for testing purpose only and by no means intended for production.
 
-This piece of work makes usage of the Html Agility Pack: https://htmlagilitypack.codeplex.com/
+## Credits
+
+This piece of work makes usage of:
+* Html Agility Pack: https://github.com/zzzprojects/html-agility-pack
+* AutoMapper: https://github.com/AutoMapper/AutoMapper
+
+Licenses may differ.
