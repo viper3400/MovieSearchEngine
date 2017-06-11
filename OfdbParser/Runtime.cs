@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using libjfunx.logging;
+using Dapplo.Log;
 
 namespace OfdbParser
 {
     public static class Runtime
     {
+        private static readonly LogSource Log = new LogSource();
+
         /// <summary>
         /// Parsed den übergebenen String um die Laufzeit in Minuten zu ermitteln.
         /// </summary>
@@ -21,7 +23,7 @@ namespace OfdbParser
             // dies sind dann die Minuten.
             // Um eventuelle weitere Formate ermitteln zu können, loggen wir den ursprünglichen Zeitstring mit.
 
-            Logger.Log(LogEintragTyp.Debug, "Parsing string: " + Runtime);
+            Log.Debug().Write("Parsing string: " + Runtime);
             string runtimeMinutes = Runtime.Split(':').FirstOrDefault();
             Int32 temp;
             if (!Int32.TryParse(runtimeMinutes, out temp))
@@ -32,7 +34,7 @@ namespace OfdbParser
                 runtimeMinutes = Regex.Replace(Runtime, "[^0-9]+", string.Empty);
             }
 
-            Logger.Log(LogEintragTyp.Debug, "Parsed to time string: " + runtimeMinutes);
+            Log.Debug().Write("Parsed to time string: " + runtimeMinutes);
             return runtimeMinutes;
         }
 
