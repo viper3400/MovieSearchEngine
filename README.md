@@ -32,7 +32,8 @@ You probably have to search this way round for getting a match.
 
 You could also init a search using the "OFDB Gateway XML / JSON Interface" (http://www.ofdbgw.org/). 
 This is what I've first integrated but I found that the gateway was not reliable for me. 
-So this is not maintained any longer.
+
+**So this is not maintained any longer.**
 
 ```csharp
 // Init a new instance
@@ -46,5 +47,6 @@ The UIs within the solution are for testing purpose only and by no means intende
 This piece of work makes usage of:
 * Html Agility Pack: https://github.com/zzzprojects/html-agility-pack
 * AutoMapper: https://github.com/AutoMapper/AutoMapper
+* Dapplo.Log: https://github.com/dapplo/Dapplo.Log
 
 Licenses may differ.
