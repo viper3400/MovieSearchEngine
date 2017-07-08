@@ -255,8 +255,10 @@ namespace MovieSearchEngineUnitTests
             Assert.AreEqual("2014", actual.FirstOrDefault().Year);
             Assert.AreEqual("https://ssl.ofdb.de/images/film/268/268777.jpg", actual.FirstOrDefault().ImgUrl);
             Assert.AreEqual("268777;396788", actual.FirstOrDefault().Reference);
-            Assert.AreEqual("7.67", actual.FirstOrDefault().Rating);
 
+            var rating = Double.Parse(actual.FirstOrDefault().Rating);
+            var checkRating = rating > 6 && rating < 9;
+            Assert.IsTrue(checkRating, $"Rating was {rating}");            
         }
     }
 }
