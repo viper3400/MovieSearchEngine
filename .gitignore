@@ -2,7 +2,7 @@ AutoMapper.3.2.1
 TestResults
 /*.suo
 bin
-/obj
+*/obj
 /
 Debug
 HtmlAgilityPack.1.4.9
@@ -12,4 +12,5 @@ HtmlAgilityPack.1.4.9
 *.suo
 /.vs/MovieSearchEngine/v15/.suo
 /packages/Dapplo.Log.1.0.29
-/.vs/MovieSearchEngine/v15/sqlite3
+/.vs
+/packages
