@@ -12,7 +12,7 @@
     <description>Library for collecting movie information from web databases.</description>
     <copyright>Copyright 2017</copyright>
     <dependencies>
-      <dependency id="HtmlAgilityPack" version="1.4.9.5" />
+      <dependency id="HtmlAgilityPack" version="1.5.1" />
       <dependency id="Dapplo.Log" version="1.0.29" />
     </dependencies>
     <references>
