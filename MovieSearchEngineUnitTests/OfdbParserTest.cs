@@ -258,7 +258,7 @@ namespace MovieSearchEngineUnitTests
 
             var rating = Double.Parse(actual.FirstOrDefault().Rating);
             var checkRating = rating > 6 && rating < 9;
-            Assert.IsTrue(checkRating, $"Rating was {rating}");            
+            Assert.IsTrue(checkRating, String.Format("Rating was ", rating));            
         }
     }
 }
