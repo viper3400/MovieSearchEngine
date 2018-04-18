@@ -239,7 +239,19 @@ namespace MovieSearchEngineUnitTests
             var input = "258134;386665";
             var SUT = new OfdbSearch();
             var actual = SUT.SearchMovieByEngineId(input);
-            Assert.Inconclusive();
+            Assert.AreEqual("Bestimmung - Divergent, Die", actual.FirstOrDefault().Title);
+            Assert.AreEqual("139", actual.FirstOrDefault().Length);
+        }
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
+        public void SearchMovieByEngineIdWithInvalidEditionTest()
+        {
+            var input = "228415;40652";
+            var SUT = new OfdbSearch();
+            var actual = SUT.SearchMovieByEngineId(input);
+            Assert.AreEqual("Oma & Bella", actual.FirstOrDefault().Title);
+            Assert.IsNull(actual.FirstOrDefault().Length, String.Format("Length is not null {0}", actual.FirstOrDefault().Length));
         }
 
         [TestMethod()]
