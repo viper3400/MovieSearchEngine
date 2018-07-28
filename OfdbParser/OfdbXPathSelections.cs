@@ -152,7 +152,7 @@ namespace OfdbParser
                 {
                     Name = XPathSelectionName.DetailsPlot,
                     Url = "https://ssl.ofdb.de/film/{placeholder},",
-                    XPath = "/html//a[contains(@href,\"plot\")]",
+                    XPath = "/html//a[starts-with(@href,\"plot/\")]",
                     Resolver = new OfdbDetailsPlotResolver()
                 });
 
