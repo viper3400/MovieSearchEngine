@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfdbParser", "OfdbParser\Of
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfdbParser.Core", "OfdbParser.Core\OfdbParser.Core.csproj", "{EA443AE6-3A9D-4F72-A05D-91B66730A75B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +47,15 @@ Global
 		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89EF4587-8587-48E1-A1CF-B652224C8CC8}
 	EndGlobalSection
 EndGlobal

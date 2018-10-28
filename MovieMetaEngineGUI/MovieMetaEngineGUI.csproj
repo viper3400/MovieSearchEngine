@@ -82,9 +82,9 @@
       <Project>{485800ba-7f0e-4d5e-9979-e0c5d5596d76}</Project>
       <Name>MovieMetaEngine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OfdbParser\OfdbParser.csproj">
-      <Project>{94e7599e-947e-45f4-926d-9d157d9c5e0e}</Project>
-      <Name>OfdbParser</Name>
+    <ProjectReference Include="..\OfdbParser.Core\OfdbParser.Core.csproj">
+      <Project>{ea443ae6-3a9d-4f72-a05d-91b66730a75b}</Project>
+      <Name>OfdbParser.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\OfdbWebGatewayConnector\OfdbWebGatewayConnector.csproj">
       <Project>{960d2224-5046-4a5e-b34d-85e1916fb91c}</Project>
