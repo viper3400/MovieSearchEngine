@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfdbParser.Core", "OfdbParser.Core\OfdbParser.Core.csproj", "{EA443AE6-3A9D-4F72-A05D-91B66730A75B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngine.Core", "MovieSearchEngine.Core\MovieSearchEngine.Core.csproj", "{923CE7AD-97EE-46F1-A402-B550BC5D59BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA443AE6-3A9D-4F72-A05D-91B66730A75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
