@@ -75,16 +75,12 @@
     <Compile Include="XPathAgilityPackSelector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieMetaEngine\MovieMetaEngine.csproj">
-      <Project>{485800ba-7f0e-4d5e-9979-e0c5d5596d76}</Project>
-      <Name>MovieMetaEngine</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="OfdbParser.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />

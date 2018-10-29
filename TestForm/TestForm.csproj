@@ -78,8 +78,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OfdbParser\OfdbParser.csproj">
-      <Project>{94e7599e-947e-45f4-926d-9d157d9c5e0e}</Project>
+    <ProjectReference Include="..\OfdbParser.Core\OfdbParser.csproj">
+      <Project>{ea443ae6-3a9d-4f72-a05d-91b66730a75b}</Project>
       <Name>OfdbParser</Name>
     </ProjectReference>
   </ItemGroup>

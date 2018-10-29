@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MovieMetaEngine\MovieMetaEngine.csproj" />
+    <ProjectReference Include="..\MovieSearchEngine.Core\MovieSearchEngine.csproj" />
   </ItemGroup>
 
 </Project>
