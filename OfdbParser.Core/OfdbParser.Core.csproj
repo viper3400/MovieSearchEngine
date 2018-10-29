@@ -2,9 +2,16 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Version>2.0.0</Version>
+    <Authors>viper3400</Authors>
+    <PackageId>Jaxx.MovieMetaEngine</PackageId>
+    <Company>viper3400</Company>
+    <Product>Jaxx.MovieMetaEngine</Product>
+    <PackageLicenseUrl>https://github.com/viper3400/MovieSearchEngine/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <Description>Library for collecting movie information from web databases.</Description>
+    <PackageProjectUrl>https://github.com/viper3400/MovieSearchEngine</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
