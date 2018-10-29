@@ -64,11 +64,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="OfdbModelToMovieMetaModelMapperTest.cs" />
     <Compile Include="OfdbParserEditionParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestTest.cs" />
-    <Compile Include="RuntimeTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="OfdbParserTest.cs" />
   </ItemGroup>
@@ -80,10 +77,6 @@
     <ProjectReference Include="..\OfdbParser\OfdbParser.csproj">
       <Project>{94e7599e-947e-45f4-926d-9d157d9c5e0e}</Project>
       <Name>OfdbParser</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OfdbWebGatewayConnector\OfdbWebGatewayConnector.csproj">
-      <Project>{960d2224-5046-4a5e-b34d-85e1916fb91c}</Project>
-      <Name>OfdbWebGatewayConnector</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -86,10 +86,6 @@
       <Project>{ea443ae6-3a9d-4f72-a05d-91b66730a75b}</Project>
       <Name>OfdbParser.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OfdbWebGatewayConnector\OfdbWebGatewayConnector.csproj">
-      <Project>{960d2224-5046-4a5e-b34d-85e1916fb91c}</Project>
-      <Name>OfdbWebGatewayConnector</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
