@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMetaEngineGUI", "Movie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfdbParser", "OfdbParser.Core\OfdbParser.csproj", "{EA443AE6-3A9D-4F72-A05D-91B66730A75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfdbParser", "OfdbParser\OfdbParser.csproj", "{EA443AE6-3A9D-4F72-A05D-91B66730A75B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngine", "MovieSearchEngine.Core\MovieSearchEngine.csproj", "{923CE7AD-97EE-46F1-A402-B550BC5D59BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngine", "MovieSearchEngine\MovieSearchEngine.csproj", "{923CE7AD-97EE-46F1-A402-B550BC5D59BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -78,11 +78,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieSearchEngine.Core\MovieSearchEngine.csproj">
+    <ProjectReference Include="..\MovieSearchEngine\MovieSearchEngine.csproj">
       <Project>{923ce7ad-97ee-46f1-a402-b550bc5d59bc}</Project>
       <Name>MovieSearchEngine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OfdbParser.Core\OfdbParser.csproj">
+    <ProjectReference Include="..\OfdbParser\OfdbParser.csproj">
       <Project>{ea443ae6-3a9d-4f72-a05d-91b66730a75b}</Project>
       <Name>OfdbParser</Name>
     </ProjectReference>
