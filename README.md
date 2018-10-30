@@ -30,14 +30,24 @@ You probably have to search this way round for getting a match.
 
 ![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/model.png "Model")
 
-You could also init a search using the "OFDB Gateway XML / JSON Interface" (http://www.ofdbgw.org/). 
-This is what I've first integrated but I found that the gateway was not reliable for me. 
+## Legacy Branch
 
-**So this is not maintained any longer.**
+In versions 1.x one could also init a search using the "OFDB Gateway XML / JSON Interface" (http://www.ofdbgw.org/). 
+This is what I've first integrated but I found that the gateway was not reliable for me.
+
+**So this isn't maintained any longer and also not part of version >= 2.x**
 
 ```csharp
 // Init a new instance
 MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
+```
+
+Nevertheless, I've create a legacy branch: https://github.com/viper3400/MovieSearchEngine/tree/legacy and the version is still available at nuget.org.
+
+To install the legacy version from Package Manager Console run 
+
+```
+PM> Install-Package Jaxx.MovieMetaEngine -Version 1.2.0.10
 ```
 
 The UIs within the solution are for testing purpose only and by no means intended for production.
