@@ -227,8 +227,18 @@ namespace MovieSearchEngineUnitTests
             var input = "Kreis, Der";
             var SUT = new OfdbSearch();
             var result = SUT.SearchByTitle(input);
+            Assert.AreEqual("Kreis, Der", result.FirstOrDefault().Title);
 
-         
+        }
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
+        public void OfdbSearch_SearchByTitleWithoutResultTest()
+        {
+            var input = "Kreis,Der";
+            var SUT = new OfdbSearch();
+            var result = SUT.SearchByTitle(input);
+            Assert.AreEqual(0, result.Count());
         }
 
         [TestMethod()]

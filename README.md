@@ -23,10 +23,15 @@ List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitl
 // Search a movie by engine id
 List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
 ```
+## Search By Title
 
 If you search a movie by its title, be aware that you probably need the complete title and the correct spelling and synthax.
 When using OFDB the movie "The Avengers" is stored as "Avengers, The" for example. 
 You probably have to search this way round for getting a match.
+
+If there is no result at all you will get an empty list.
+
+## Data Model
 
 ![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/model.png "Model")
 

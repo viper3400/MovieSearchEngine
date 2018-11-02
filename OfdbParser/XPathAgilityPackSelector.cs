@@ -27,14 +27,16 @@ namespace OfdbParser
         public List<string> GetXPathValues(string XPath)
         {
             IEnumerable<HtmlAgilityPack.HtmlNode> nodes = Enumerable.Empty<HtmlAgilityPack.HtmlNode>();
-
-            
-            nodes = baseNode.SelectNodes(XPath);
             var htmlBuilder = new List<string>();
 
-            foreach (var n in nodes)
+            nodes = baseNode.SelectNodes(XPath);
+            
+            if (nodes != null)
             {
-                htmlBuilder.Add(XPathHelper.EscapeJavaScript(n.OuterHtml));
+                foreach (var n in nodes)
+                {
+                    htmlBuilder.Add(XPathHelper.EscapeJavaScript(n.OuterHtml));
+                } 
             }
             return htmlBuilder;
         }
