@@ -1,0 +1,28 @@
+version: 2.0.0.{build}-pre
+branches:
+  only:
+  - master
+skip_non_tags: true
+image: Visual Studio 2017
+clone_depth: 1
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+install:
+- cmd: ''
+before_build:
+- cmd: >-
+    dotnet restore ./MovieSearchEngine/MovieSearchEngine.csproj --verbosity m
+
+    dotnet restore ./OfdbParser/OfdbParser.csproj --verbosity m
+build:
+  verbosity: minimal
+test: off
+artifacts:
+- path: '**\*.nupkg'
+  name: MovieMetaEngine

@@ -11,7 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfdbParser", "OfdbParser\OfdbParser.csproj", "{EA443AE6-3A9D-4F72-A05D-91B66730A75B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngine", "MovieSearchEngine\MovieSearchEngine.csproj", "{923CE7AD-97EE-46F1-A402-B550BC5D59BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSearchEngine", "MovieSearchEngine\MovieSearchEngine.csproj", "{923CE7AD-97EE-46F1-A402-B550BC5D59BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC939BF9-70F9-4636-9364-00B81C875AA8}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
