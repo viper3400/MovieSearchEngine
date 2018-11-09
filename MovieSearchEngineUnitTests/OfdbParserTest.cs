@@ -255,6 +255,18 @@ namespace MovieSearchEngineUnitTests
 
         [TestMethod()]
         [TestCategory(CAT_ONLINE)]
+        public void SearchMovieByEngineIdWithMissingPlotTest()
+        {
+            // we search for a movie with missing plot which caused an exception
+            // https://github.com/viper3400/MovieSearchEngine/issues/6
+            var input = "277170";
+            var SUT = new OfdbSearch();
+            var actual = SUT.SearchMovieByEngineId(input);
+            Assert.AreEqual("Kirschblüten und rote Bohnen", actual.FirstOrDefault().Title);
+        }
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
         public void SearchMovieByEngineIdWithInvalidEditionTest()
         {
             var input = "228415;40652";

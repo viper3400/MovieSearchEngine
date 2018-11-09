@@ -170,12 +170,16 @@ namespace OfdbParser
                                 break;
                         }
                     }
-                    catch (NullReferenceException)
+                    catch (Exception ex)
                     {
-                        // mainly occurs if xpath returns no values
+                        if (ex is ArgumentNullException || ex is NullReferenceException)
+                        {
+                            // mainly occurs if xpath returns no values 
+                            Log.Error().Write($"Error while parsing result for {xObject.Name} mainly because of emtpy data");
+                        }
+                        else throw ex;                        
                     }
                 }
-
             }
 
             return new List<MovieMetaMovieModel>() { result };
