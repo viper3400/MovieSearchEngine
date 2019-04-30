@@ -33,7 +33,7 @@ If there is no result at all you will get an empty list.
 
 ## Data Model
 
-![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/model.png "Model")
+![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/ClassDiagram.png "Model")
 
 ## Legacy Branch
 
