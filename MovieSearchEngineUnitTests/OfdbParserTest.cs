@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OfdbParser;
 using OfdbParser.OfdbResolvers;
 using System.Linq;
+using System.Text;
 
 namespace MovieSearchEngineUnitTests
 {
@@ -293,6 +294,47 @@ namespace MovieSearchEngineUnitTests
             var rating = Double.Parse(actual.FirstOrDefault().Rating);
             var checkRating = rating > 6 && rating < 9;
             Assert.IsTrue(checkRating, String.Format("Rating was ", rating));            
+        }
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
+        public void OfdbDetailsPlotCompleteMultiLine()
+        {
+            var input = "8266;5025";
+            var expectedPlotBuilder = new StringBuilder();
+            expectedPlotBuilder.Append("Der Professor für Sprachen Henry Higgins (Rex Harrison) geht auf eine Wette ein, ");
+            expectedPlotBuilder.Append("nach der er niemanden niederen Standes so trainieren könnte, daß er in der Adelsgesellschaft nicht auffallen würde.");
+            expectedPlotBuilder.AppendLine();
+            expectedPlotBuilder.Append("Higgins wählt sich das ordinäre Blumenmädchen Eliza Doolittle (Audrey Hepburn) als Zielobjekt aus und beginnt, ");
+            expectedPlotBuilder.Append("ihren Akzent wegzutrainieren und ihr Manieren beizubringen. Das ist nicht ganz einfach, aber Eliza ist eine Musterschülerin...");
+
+            var SUT = new OfdbSearch();
+            var actual = SUT.SearchMovieByEngineId(input);
+
+            Assert.AreEqual("My Fair Lady", actual.FirstOrDefault().Title);
+            Assert.AreEqual(expectedPlotBuilder.ToString(), actual.FirstOrDefault().Plot);
+        }
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
+        public void OfdbDetailsPlotCompleteSingleLine()
+        {
+            var input = "12143;11883";
+            var expectedPlotBuilder = new StringBuilder();
+            expectedPlotBuilder.Append("Der Abend ihrer Verlobung soll es sein: Elle Woods (Reese Witherspoon), superchic, beliebt, " +
+                "gut gebaut, extrem blond und mit einem Abschluß in Modemarketing ausgezeichnet, erwartet einen beachtlichen Sechskaräter " +
+                "von ihrem geliebten Warner (Matthew Davis). Doch der will nach Harvard gehen, wo man derlei Blondchen dem" +
+                " Familienwillen opfern muß, wenn man mit dreißig Jahren Senator sein will. Ergo wird Elle vor die Tür gesetzt. " +
+                "Nur gibt diese nicht auf, denn nur weil sie blond ist, ist sie noch lange nicht blöd. Zwar extrem beverly-hills-verhaltensgeschädigt, " +
+                "aber hochintelligent schafft sie den Harvardeignungstest für Jura und fällt mit den neuesten Modetrends in der steifen Universitätsstadt ein, " +
+                "wie die Hunnen in Europa. Als man sie dort auflaufen lassen will, besinnt sie sich auf Universitätstugenden und wird zur " +
+                "ernstzunehmenden Jurastudentin, die bald Gelegenheit hat, in einem Mordprozeß ihre speziellen Kenntnisse anzuwenden...");
+            
+            var SUT = new OfdbSearch();
+            var actual = SUT.SearchMovieByEngineId(input);
+
+            Assert.AreEqual("Natürlich blond - Vor dem Gesetz sind alle blond!", actual.FirstOrDefault().Title);
+            Assert.AreEqual(expectedPlotBuilder.ToString(), actual.FirstOrDefault().Plot);
         }
     }
 }

@@ -12,8 +12,10 @@ namespace OfdbParser.OfdbResolvers
         {
             var link = new OfdbDetailsPlotLinkResolver().Resolve(SourceString);
             var request = new XPathAgilityPackSelector(link);
-            var searchResults = request.GetXPathValues("/html//p[@class=\"Blocksatz\"]/font/b[contains(text(),\"Eine Inhaltsangabe\")]/following-sibling::text()[last()]");
-            return searchResults.FirstOrDefault();
+            var searchResults = request.GetXPathValues("/html//p[@class=\"Blocksatz\"]/font/b[contains(text(),\"Eine Inhaltsangabe\")]/following-sibling::text()");
+            searchResults = searchResults.Select(r => r.TrimEnd()).ToList();
+            var result = string.Join("", searchResults);
+            return result;
         }
 
         public T Resolve<T>(List<string> SourceList)
