@@ -252,6 +252,20 @@ namespace MovieSearchEngineUnitTests
             var actual = SUT.SearchMovieByEngineId(input);
             Assert.AreEqual("Bestimmung - Divergent, Die", actual.FirstOrDefault().Title);
             Assert.AreEqual("139", actual.FirstOrDefault().Length);
+            Assert.AreEqual("4010324039804", actual.FirstOrDefault().Barcode);
+        }
+
+
+        [TestMethod()]
+        [TestCategory(CAT_ONLINE)]
+        public void SearchMovieByEngineIdWithMissingBarcodeTest()
+        {
+            var input = "258134;410780";
+            var SUT = new OfdbSearch();
+            var actual = SUT.SearchMovieByEngineId(input);
+            Assert.AreEqual("Bestimmung - Divergent, Die", actual.FirstOrDefault().Title);
+            Assert.AreEqual("126", actual.FirstOrDefault().Length);
+            Assert.IsNull(actual.FirstOrDefault().Barcode);
         }
 
         [TestMethod()]
@@ -290,6 +304,7 @@ namespace MovieSearchEngineUnitTests
             Assert.AreEqual("2014", actual.FirstOrDefault().Year);
             Assert.AreEqual("https://ssl.ofdb.de/images/film/268/268777.jpg", actual.FirstOrDefault().ImgUrl);
             Assert.AreEqual("268777;396788", actual.FirstOrDefault().Reference);
+            Assert.AreEqual(input, actual.FirstOrDefault().Barcode);
 
             var rating = Double.Parse(actual.FirstOrDefault().Rating);
             var checkRating = rating > 6 && rating < 9;

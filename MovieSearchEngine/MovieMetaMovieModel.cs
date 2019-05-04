@@ -22,5 +22,6 @@ namespace MovieMetaEngine
         public string Rating { get; set; }   
         public List<MovieMetaEditionModel> Editions {get; set; }
         public List<string> Genres { get; set; }
+        public string Barcode { get; set; }
     }
 }

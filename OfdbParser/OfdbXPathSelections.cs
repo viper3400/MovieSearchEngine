@@ -209,6 +209,16 @@ namespace OfdbParser
                     XPath = "/html//font[text()=\"Laufzeit:\"]/parent::node()/parent::node()//b/text()",
                     Resolver = new OfdbEditionRuntimeResolver()
                 });
+            // Retrieve EditionRuntime
+            xPathSelections.Add(
+                new XPathSelection
+                {
+                    Name = XPathSelectionName.EditionBarcode,
+                    //Url = "https://ssl.ofdb.de/view.php?page=fassung&fid=258134&vid=386665,",
+                    Url = "https://ssl.ofdb.de/view.php?page=fassung{placeholder},",
+                    XPath = "/html//a[text()=\"EAN/UPC\"]/parent::node()/parent::node()/parent::node()//b/text()",
+                    Resolver = new OfdbPassThroughResolver()
+                });
             #endregion EditionDetails
 
             return xPathSelections;

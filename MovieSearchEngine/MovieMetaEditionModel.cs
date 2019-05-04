@@ -12,5 +12,6 @@ namespace MovieMetaEngine
         public string Name { get; set; }
         public string Country { get; set; }
         public string Length { get; set; }
+        public string Barcode { get; set; }
     }
 }

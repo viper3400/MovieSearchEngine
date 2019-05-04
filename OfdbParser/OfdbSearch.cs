@@ -63,7 +63,7 @@ namespace OfdbParser
         public List<MovieMetaMovieModel> SearchMovieByEngineId(string EngineId)
         {
             Log.Debug().Write($"EngineId: {EngineId}");
-            string movieReference = "";
+            string movieReference;
             string editionReference = "";
 
             if (EngineId.Contains(";"))
@@ -199,7 +199,8 @@ namespace OfdbParser
                 // Get all desired search objects
                 var searchObjects = new XPathSelectionName[]
                 {
-                 XPathSelectionName.EditionRuntime
+                 XPathSelectionName.EditionRuntime,
+                 XPathSelectionName.EditionBarcode
                 };
 
                 // Get the url and resolver data for the desired object
@@ -234,6 +235,9 @@ namespace OfdbParser
                                 case XPathSelectionName.EditionRuntime:
                                     desiredEdition.Length = xObject.Resolver.Resolve<List<string>>(value).FirstOrDefault();
                                     break;
+                                case XPathSelectionName.EditionBarcode:
+                                    desiredEdition.Barcode = xObject.Resolver.Resolve<List<string>>(value).FirstOrDefault();
+                                    break;
                             }
                         }
                         catch (NullReferenceException)
@@ -246,6 +250,7 @@ namespace OfdbParser
 
                 movieResultList.FirstOrDefault().Reference = String.Format("{0};{1}", movieReference, editionReference);
                 movieResultList.FirstOrDefault().Length = desiredEdition.Length;
+                movieResultList.FirstOrDefault().Barcode = desiredEdition.Barcode;
             }
             else Log.Debug().Write($"No edition found for {editionReference}");
 
@@ -324,7 +329,6 @@ namespace OfdbParser
             }
 
             return SearchMovieByEngineId(result.Reference);
-            //return new List<MovieMetaMovieModel>() { result };
         }
 
 

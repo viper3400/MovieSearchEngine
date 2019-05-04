@@ -25,7 +25,8 @@ namespace OfdbParser
         DetailsCoverImage,
         DetailsEditions,
         DetatilsRating,
-        EditionRuntime
+        EditionRuntime,
+        EditionBarcode
 
     }
     public class XPathSelection
