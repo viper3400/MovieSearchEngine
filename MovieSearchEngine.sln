@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngineUnitTests", "MovieSearchEngineUnitTests\MovieSearchEngineUnitTests.csproj", "{8725D31C-AA40-4601-A325-F9FC50F26B21}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMetaEngineGUI", "MovieMetaEngineGUI\MovieMetaEngineGUI.csproj", "{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{8BC20E75-2C7F-4D5D-A1AD-8AA0B2B08B8C}"
@@ -21,16 +19,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchEngineXUnitTests", "MovieSearchEngineXUnitTests\MovieSearchEngineXUnitTests.csproj", "{39D458DA-0EC9-4519-861B-1A17C9013729}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8725D31C-AA40-4601-A325-F9FC50F26B21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98CB88E4-1DAB-4AE1-ABB5-791CD7DF724D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +43,10 @@ Global
 		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923CE7AD-97EE-46F1-A402-B550BC5D59BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D458DA-0EC9-4519-861B-1A17C9013729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D458DA-0EC9-4519-861B-1A17C9013729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D458DA-0EC9-4519-861B-1A17C9013729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D458DA-0EC9-4519-861B-1A17C9013729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
