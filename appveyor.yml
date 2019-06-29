@@ -21,7 +21,7 @@ before_build:
 
     dotnet restore ./OfdbParser/OfdbParser.csproj --verbosity m
 
-    dotnet restore ./MovieSearchEngineXUnitTest/MovieSearchEngineXUnitTest.csproj --verbosity m
+    dotnet restore ./MovieSearchEngineXUnitTests/MovieSearchEngineXUnitTests.csproj --verbosity m
 build:
   verbosity: minimal
 test: off
