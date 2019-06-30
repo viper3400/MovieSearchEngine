@@ -40,7 +40,7 @@ namespace TheMovieDbApi
 
         internal async Task<List<MovieMetaMovieModel>> SearchApiByTitle(string Title)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/search/movie/?api_key={_apiOptions.ApiKey}&language=de-DE&query={Title}");
+            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={Title}");
             var requestContent = await requestResult.Content.ReadAsStringAsync();
             var pagedResult = JsonConvert.DeserializeObject<TheMovieDbApiPagedSearchResultModel>(requestContent);
 
