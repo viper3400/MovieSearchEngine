@@ -24,7 +24,8 @@ namespace MovieSearchEngineXUnitTests
                 UseApi = configuration.GetValue<bool>("TheMovieDBApi:UseApi"),
                 ApiKey = configuration.GetValue<string>("TheMovieDBApi:ApiKey"),
                 ApiUrl = configuration.GetValue<string>("TheMovieDBApi:ApiUrl"),
-                ApiImageBaseUrl = configuration.GetValue<string>("TheMovieDBApi:ApiImageBaseUrl")
+                ApiImageBaseUrl = configuration.GetValue<string>("TheMovieDBApi:ApiImageBaseUrl"),
+                ApiReferenceKey = configuration.GetValue<string>("TheMovieDBApi:ApiReferenceKey")
             };
             
         }
@@ -52,10 +53,16 @@ namespace MovieSearchEngineXUnitTests
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
             Assert.Equal("Drachenzähmen leicht gemacht 3: Die geheime Welt", actual.Title);
+
+            // Check genres
             Assert.Contains("Abenteuer", actual.Genres);
             Assert.Contains("Animation", actual.Genres);
             Assert.Contains("Familie", actual.Genres);
             Assert.Equal(3, actual.Genres.Count());
+
+            // Check actors
+            Assert.Equal(20, actual.Actors.Count());
+            Assert.Equal("Jay Baruchel", actual.Actors.FirstOrDefault(a => a.Reference == "5c6d150b0e0a262c999fbcb3").ActorName);
         }
     }
 }

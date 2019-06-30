@@ -62,7 +62,12 @@ namespace TheMovieDbApi
             var requestResult = await _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
             var requestContent = await requestResult.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<IdSearchResultModel>(requestContent);
-            return ConvertModel(result);
+
+            // get actos if any
+            var metaModel = ConvertModel(result);
+            metaModel.Actors = await GetActorsForMovie(id);
+
+            return metaModel;
         }
         internal MovieMetaMovieModel ConvertModel (BasicResultModel inputModel)
         {
@@ -96,18 +101,39 @@ namespace TheMovieDbApi
 
         internal MovieMetaMovieModel ConvertModel(IdSearchResultModel inputModel)
         {
-
+            // Convert the basic model
             var metaModel = ConvertModel((BasicResultModel)inputModel);
 
+            // add genres if any
             if (inputModel.Genres.Count() > 0) metaModel.Genres = new List<string>();
             foreach (var genre in inputModel.Genres)
             {
                 metaModel.Genres.Add(genre.Name);
             }
-
+            
             return metaModel;
         }
 
+        internal async Task<List<MovieMetaActorModel>> GetActorsForMovie(string id)
+        {
+            var requestResult = await _httpClient.GetAsync($"/3/movie/{id}/credits?api_key={_apiOptions.ApiKey}&language=de-DE");
+            var requestContent = await requestResult.Content.ReadAsStringAsync();
+            var pagedResult = JsonConvert.DeserializeObject<ActorResultModel>(requestContent);
+
+            var metaActor = new List<MovieMetaActorModel>();
+
+            foreach (var actor in pagedResult.Cast )
+            {
+                metaActor.Add(new MovieMetaActorModel
+                {
+                    ActorName = actor.Name,
+                    MetaEngine = _apiOptions.ApiReferenceKey,
+                    Reference = actor.CreditId
+                });
+            }
+
+            return metaActor;
+        }
         internal string JoinImagePath(string imageFileName)
         {
             return new Uri(_apiOptions.ApiImageBaseUrl + imageFileName).ToString();

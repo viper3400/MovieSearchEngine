@@ -10,5 +10,6 @@ namespace TheMovieDbApi
         public string ApiKey { get; set; }
         public string ApiUrl { get; set; }
         public string ApiImageBaseUrl { get; set; }
+        public string ApiReferenceKey { get; set; }
     }
 }

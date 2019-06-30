@@ -3,6 +3,7 @@
     "UseApi": true,
     "ApiKey": "xxxx",
     "ApiUrl": "http://api.themoviedb.org",
-    "ApiImageBaseUrl": "https://image.tmdb.org/t/p/original"
+    "ApiImageBaseUrl": "https://image.tmdb.org/t/p/original",
+    "ApiReferenceKey": "TheMovieDb"
   }
 }
