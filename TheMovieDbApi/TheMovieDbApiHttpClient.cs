@@ -5,6 +5,9 @@ using System.Net.Http;
 using MovieMetaEngine;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using TheMovieDbApi.Models;
+using System.IO;
+using System.Linq;
 
 namespace TheMovieDbApi
 {
@@ -12,6 +15,7 @@ namespace TheMovieDbApi
     {
         private readonly TheMovieDbApiOptions _apiOptions;
         private readonly HttpClient _httpClient;
+
         public TheMovieDbApiHttpClient(TheMovieDbApiOptions apiOptions)
         {
             _apiOptions = apiOptions;
@@ -42,7 +46,7 @@ namespace TheMovieDbApi
         {
             var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={Title}");
             var requestContent = await requestResult.Content.ReadAsStringAsync();
-            var pagedResult = JsonConvert.DeserializeObject<TheMovieDbApiPagedSearchResultModel>(requestContent);
+            var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
 
             var resultList = new List<MovieMetaMovieModel>();
             foreach (var entry in pagedResult.results)
@@ -57,10 +61,10 @@ namespace TheMovieDbApi
         {
             var requestResult = await _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
             var requestContent = await requestResult.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<TheMovieDbApiSearchResultModel>(requestContent);
+            var result = JsonConvert.DeserializeObject<IdSearchResultModel>(requestContent);
             return ConvertModel(result);
         }
-        internal MovieMetaMovieModel ConvertModel (TheMovieDbApiSearchResultModel inputModel)
+        internal MovieMetaMovieModel ConvertModel (BasicResultModel inputModel)
         {
             return new MovieMetaMovieModel()
             {
@@ -72,6 +76,36 @@ namespace TheMovieDbApi
                 Reference = inputModel.Id.ToString(),
                 Rating = inputModel.VoteAverage.ToString()
             };
+        }
+
+        internal MovieMetaMovieModel ConvertModel(SearchResultModel inputModel)
+        {
+            var genresFromFileString = File.ReadAllText("TheMovieDbGenres.json");
+            var genresFromFile = JsonConvert.DeserializeObject<List<GenreModel>>(genresFromFileString);
+
+            var metaModel = ConvertModel((BasicResultModel)inputModel);
+
+            if (inputModel.GenreIds.Count() > 0) metaModel.Genres = new List<string>();
+            foreach (var genre in inputModel.GenreIds)
+            {
+                metaModel.Genres.Add(genresFromFile.FirstOrDefault(g => g.Id == genre).Name);
+            }
+
+            return metaModel;            
+        }
+
+        internal MovieMetaMovieModel ConvertModel(IdSearchResultModel inputModel)
+        {
+
+            var metaModel = ConvertModel((BasicResultModel)inputModel);
+
+            if (inputModel.Genres.Count() > 0) metaModel.Genres = new List<string>();
+            foreach (var genre in inputModel.Genres)
+            {
+                metaModel.Genres.Add(genre.Name);
+            }
+
+            return metaModel;
         }
 
         internal string JoinImagePath(string imageFileName)

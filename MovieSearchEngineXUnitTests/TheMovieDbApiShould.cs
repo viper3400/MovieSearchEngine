@@ -38,6 +38,10 @@ namespace MovieSearchEngineXUnitTests
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
             Assert.Equal("Drachenzähmen leicht gemacht 3: Die geheime Welt", actual.Title);
+            Assert.Contains("Abenteuer", actual.Genres);
+            Assert.Contains("Animation", actual.Genres);
+            Assert.Contains("Familie", actual.Genres);
+            Assert.Equal(3, actual.Genres.Count());
         }
 
         [Fact]
@@ -48,6 +52,10 @@ namespace MovieSearchEngineXUnitTests
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
             Assert.Equal("Drachenzähmen leicht gemacht 3: Die geheime Welt", actual.Title);
+            Assert.Contains("Abenteuer", actual.Genres);
+            Assert.Contains("Animation", actual.Genres);
+            Assert.Contains("Familie", actual.Genres);
+            Assert.Equal(3, actual.Genres.Count());
         }
     }
 }

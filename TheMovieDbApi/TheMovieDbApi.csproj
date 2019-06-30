@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,6 +10,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieSearchEngine\MovieSearchEngine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TheMovieDbGenres.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
