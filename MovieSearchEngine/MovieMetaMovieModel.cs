@@ -16,6 +16,7 @@ namespace MovieMetaEngine
         public string Year { get; set; }
         public string ProductionCountry { get; set; }
         public string ImgUrl { get; set; }
+        public string BackgroundImgUrl { get; set; }
         public string Length { get; set; }
         public List<MovieMetaActorModel> Actors { get; set;}
         public string Plot { get; set; }     

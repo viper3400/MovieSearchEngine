@@ -74,6 +74,7 @@ namespace TheMovieDbApi
             return new MovieMetaMovieModel()
             {
                 ImgUrl = JoinImagePath(inputModel.PosterPath),
+                BackgroundImgUrl = JoinImagePath(inputModel.BackdropPath),
                 Plot = inputModel.Overview,
                 MetaEngine = _apiOptions.ApiReferenceKey,
                 Title = inputModel.Title,
