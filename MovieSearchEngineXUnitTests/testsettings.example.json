@@ -1,0 +1,8 @@
+{
+  "TheMovieDBApi": {
+    "UseApi": true,
+    "ApiKey": "xxxx",
+    "ApiUrl": "http://api.themoviedb.org",
+    "ApiImageBaseUrl": "https://image.tmdb.org/t/p/original"
+  }
+}
