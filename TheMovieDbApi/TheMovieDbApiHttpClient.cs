@@ -25,7 +25,7 @@ namespace TheMovieDbApi
 
         public List<MovieMetaMovieModel> SearchMovieByBarcode(string Barcode)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException("Searching by EAN / Barcode is not supported by TheMovieDb");
         }
 
         public List<MovieMetaMovieModel> SearchMovieByEngineId(string EngineId)
