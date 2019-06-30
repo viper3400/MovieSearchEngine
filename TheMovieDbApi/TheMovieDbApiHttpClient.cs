@@ -75,7 +75,7 @@ namespace TheMovieDbApi
             {
                 ImgUrl = JoinImagePath(inputModel.PosterPath),
                 Plot = inputModel.Overview,
-                MetaEngine = "theMovieDb",
+                MetaEngine = _apiOptions.ApiReferenceKey,
                 Title = inputModel.Title,
                 OriginalTitle = inputModel.OrginalTitle,
                 Reference = inputModel.Id.ToString(),
