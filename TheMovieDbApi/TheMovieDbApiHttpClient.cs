@@ -30,7 +30,7 @@ namespace TheMovieDbApi
 
         public List<MovieMetaMovieModel> SearchMovieByEngineId(string EngineId)
         {
-            throw new NotImplementedException();
+            return new List<MovieMetaMovieModel> { SearchApiById(EngineId).Result };
         }
 
         public List<MovieMetaMovieModel> SearchMovieByTitle(string Title)
@@ -53,6 +53,13 @@ namespace TheMovieDbApi
             return resultList;
         }
 
+        internal async Task<MovieMetaMovieModel> SearchApiById(string id)
+        {
+            var requestResult = await _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
+            var requestContent = await requestResult.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<TheMovieDbApiSearchResultModel>(requestContent);
+            return ConvertModel(result);
+        }
         internal MovieMetaMovieModel ConvertModel (TheMovieDbApiSearchResultModel inputModel)
         {
             return new MovieMetaMovieModel()
