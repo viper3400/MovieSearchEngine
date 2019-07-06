@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Jaxx.MovieMetaEngine.TheMovieDbApi</PackageId>
+    <Authors>viper3400</Authors>
+    <Company>viper3400</Company>
+    <Product>MovieMetaEngine.TheMovieDbApi</Product>
+    <PackageProjectUrl>https://github.com/viper3400/MovieSearchEngine</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
