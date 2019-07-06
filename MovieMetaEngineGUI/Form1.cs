@@ -17,14 +17,37 @@ namespace MovieMetaEngineGUI
             InitializeComponent();
         }
 
+        private MovieMetaEngine.IMovieMetaSearch _search;
+        private void SetEngine()
+        {
+            switch (cBEngine.Text)
+            {
+                default:
+                case "Ofdb":
+                    _search = new OfdbParser.OfdbMovieMetaSearch();
+                    break;
+                case "TheMovieDb":
+                    var opts = new TheMovieDbApi.TheMovieDbApiOptions
+                    {
+                        ApiImageBaseUrl = "https://image.tmdb.org/t/p/original",
+                        ApiKey = tbApiKey.Text,
+                        ApiUrl = "https://api.themoviedb.org",
+                        UseApi = true,
+                        ApiReferenceKey = "TheMovieDb"
+                    };
+
+                    _search = new TheMovieDbApi.TheMovieDbApiHttpClient(opts);
+                   break;                     
+            }
+        }
         private void btnSearchEAN_Click(object sender, EventArgs e)
         {
+            SetEngine();
             listBox1.Items.Clear();
             try
             {
                 //MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
-                MovieMetaEngine.IMovieMetaSearch search = new OfdbParser.OfdbMovieMetaSearch();
-                foreach (var entry in search.SearchMovieByBarcode(tbSearch.Text))
+                foreach (var entry in _search.SearchMovieByBarcode(tbSearch.Text))
                 {
                     listBox1.Items.Add(entry.Title + " - " + entry.Reference);
                 }
@@ -38,14 +61,14 @@ namespace MovieMetaEngineGUI
 
         private void btnSearchTitle_Click(object sender, EventArgs e)
         {
+            SetEngine();
             listBox1.Items.Clear();
             try
             {
                 //MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
-                MovieMetaEngine.IMovieMetaSearch search = new OfdbParser.OfdbMovieMetaSearch();
-                foreach (var entry in search.SearchMovieByTitle(tbSearch.Text))
+                foreach (var entry in _search.SearchMovieByTitle(tbSearch.Text))
                 {
-                    listBox1.Items.Add(entry.Title + " - " + entry.Reference + " - " + entry.Year + " - " + entry.ImgUrl );
+                    listBox1.Items.Add(entry.Title + " - " + entry.Reference + " - " + entry.Year + " - " + entry.ImgUrl + " -" + entry.BackgroundImgUrl);
                 }
             }
             catch (Exception ex)
@@ -56,12 +79,12 @@ namespace MovieMetaEngineGUI
 
         private void btnSearchId_Click(object sender, EventArgs e)
         {
+            SetEngine();
             listBox1.Items.Clear();
             try
             {
                 //MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
-                MovieMetaEngine.IMovieMetaSearch search = new OfdbParser.OfdbMovieMetaSearch();
-                foreach (var entry in search.SearchMovieByEngineId(tbSearch.Text))
+                foreach (var entry in _search.SearchMovieByEngineId(tbSearch.Text))
                 {
                     listBox1.Items.Add(NormalizeString(entry.Title));
                     listBox1.Items.Add(NormalizeString(entry.Year));
@@ -106,6 +129,12 @@ namespace MovieMetaEngineGUI
         private string NormalizeString(string entry)
         {
             return String.IsNullOrEmpty(entry) ? "n.v" : entry;
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var text = ((ListBox)sender).SelectedItem.ToString();
+            Clipboard.SetText(text);
         }
     }
        

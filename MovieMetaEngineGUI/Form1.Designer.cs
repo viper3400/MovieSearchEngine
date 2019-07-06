@@ -33,6 +33,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnSearchTitle = new System.Windows.Forms.Button();
             this.btnSearchId = new System.Windows.Forms.Button();
+            this.cBEngine = new System.Windows.Forms.ComboBox();
+            this.tbApiKey = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbSearch
@@ -57,8 +59,9 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(14, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(537, 238);
+            this.listBox1.Size = new System.Drawing.Size(790, 238);
             this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
             // btnSearchTitle
             // 
@@ -80,11 +83,31 @@
             this.btnSearchId.UseVisualStyleBackColor = true;
             this.btnSearchId.Click += new System.EventHandler(this.btnSearchId_Click);
             // 
+            // cBEngine
+            // 
+            this.cBEngine.FormattingEnabled = true;
+            this.cBEngine.Items.AddRange(new object[] {
+            "Ofdb",
+            "TheMovieDb"});
+            this.cBEngine.Location = new System.Drawing.Point(521, 10);
+            this.cBEngine.Name = "cBEngine";
+            this.cBEngine.Size = new System.Drawing.Size(121, 21);
+            this.cBEngine.TabIndex = 5;
+            // 
+            // tbApiKey
+            // 
+            this.tbApiKey.Location = new System.Drawing.Point(648, 10);
+            this.tbApiKey.Name = "tbApiKey";
+            this.tbApiKey.Size = new System.Drawing.Size(156, 20);
+            this.tbApiKey.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 662);
+            this.Controls.Add(this.tbApiKey);
+            this.Controls.Add(this.cBEngine);
             this.Controls.Add(this.btnSearchId);
             this.Controls.Add(this.btnSearchTitle);
             this.Controls.Add(this.listBox1);
@@ -104,6 +127,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnSearchTitle;
         private System.Windows.Forms.Button btnSearchId;
+        private System.Windows.Forms.ComboBox cBEngine;
+        private System.Windows.Forms.TextBox tbApiKey;
     }
 }
 
