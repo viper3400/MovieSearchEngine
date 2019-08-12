@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TheMovieDbApi.Models;
 using System.IO;
 using System.Linq;
+using System.Web;
 
 namespace TheMovieDbApi
 {
@@ -44,7 +45,7 @@ namespace TheMovieDbApi
 
         internal async Task<List<MovieMetaMovieModel>> SearchApiByTitle(string Title)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={Title}").ConfigureAwait(false);
+            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={HttpUtility.UrlEncode(Title)}").ConfigureAwait(false);
             var requestContent = await requestResult.Content.ReadAsStringAsync();
             var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
 

@@ -46,6 +46,20 @@ namespace MovieSearchEngineXUnitTests
         }
 
         [Fact]
+        public void SearchMovieByTitleWithSpecialChar()
+        {
+            var client = new TheMovieDbApiHttpClient(_apiOptions);
+            var result = client.SearchMovieByTitle("#9");
+            var actual = result.FirstOrDefault(m => m.Title == "#9");
+
+            Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
+            Assert.Contains("Abenteuer", actual.Genres);
+            Assert.Contains("Animation", actual.Genres);
+            Assert.Contains("Science Fiction", actual.Genres);
+            Assert.Equal(5, actual.Genres.Count());
+        }
+
+        [Fact]
         public void SearchMovieById()
         {
             var client = new TheMovieDbApiHttpClient(_apiOptions);
