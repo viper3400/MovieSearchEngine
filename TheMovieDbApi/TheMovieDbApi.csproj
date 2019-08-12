@@ -12,17 +12,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TheMovieDbGenres.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TheMovieDbGenres.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MovieSearchEngine\MovieSearchEngine.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="TheMovieDbGenres.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
