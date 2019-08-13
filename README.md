@@ -1,5 +1,15 @@
 # MovieSearchEngine
 
+## Release Notes
+
+### 2.1.0
+#### Data Model Changes
+* New enginge for The Movie Db
+* MovieMetaMovieModel has new fields "Barcode" and "BackgroundImgUrl"
+** Be aware that not all enginges deliver all fields
+
+## Ofdb
+
 Please read and accept this terms:
 
 * This is intended for PERSONAL USE ONLY
@@ -23,7 +33,7 @@ List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitl
 // Search a movie by engine id
 List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
 ```
-## Search By Title
+### Search By Title
 
 If you search a movie by its title, be aware that you probably need the complete title and the correct spelling and synthax.
 When using OFDB the movie "The Avengers" is stored as "Avengers, The" for example. 
@@ -34,6 +44,33 @@ If there is no result at all you will get an empty list.
 ## Data Model
 
 ![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/ClassDiagram.png "Model")
+
+## The Movie Db
+MovieSearchEngine supports The Movie Db (https://www.themoviedb.org/). To use this you need to register for an The Movie Db API key: https://developers.themoviedb.org/3/getting-started/introduction. Currently there is only German language support.
+
+```csharp
+// Configure for TheMovieDbApi
+ var apiOptions = new TheMovieDbApiOptions
+  {
+      UseApi = true,
+      ApiKey = yoursecretkey"),
+      ApiUrl = "https://api.themoviedb.org",
+      ApiImageBaseUrl = "https://image.tmdb.org/t/p/original",
+      ApiReferenceKey = "TheMovieDb")
+  };
+            
+// Init a new instance
+MovieMetaEngine.IMovieMetaSearch search = new TheMovieDbApiHttpClient(apiOptions);
+
+// Search a movie by barcode (not supported, throws Exception !)
+// List<MovieMetaEngine.MovieMetaMovieModel> barcodeResult = search.SearchMovieByBarcode("EANBarcode");
+
+// Search a movie by title
+List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitle("MovieTitle");
+
+// Search a movie by engine id
+List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
+```
 
 ## Legacy Branch
 
