@@ -3,12 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.2</Version>
     <PackageId>Jaxx.MovieMetaEngine.TheMovieDbApi</PackageId>
     <Authors>viper3400</Authors>
     <Company>viper3400</Company>
     <Product>MovieMetaEngine.TheMovieDbApi</Product>
     <PackageProjectUrl>https://github.com/viper3400/MovieSearchEngine</PackageProjectUrl>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 

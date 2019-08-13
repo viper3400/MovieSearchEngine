@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,8 +37,8 @@ namespace MovieMetaEngineGUI
                         ApiReferenceKey = "TheMovieDb"
                     };
 
-                    _search = new TheMovieDbApi.TheMovieDbApiHttpClient(opts);
-                   break;                     
+                    _search = new TheMovieDbApi.TheMovieDbApiHttpClient(opts, new LoggerFactory().CreateLogger< TheMovieDbApi.TheMovieDbApiHttpClient>());
+                   break; 
             }
         }
         private void btnSearchEAN_Click(object sender, EventArgs e)

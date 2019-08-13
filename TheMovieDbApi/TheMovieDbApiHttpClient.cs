@@ -9,6 +9,7 @@ using TheMovieDbApi.Models;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Microsoft.Extensions.Logging;
 
 namespace TheMovieDbApi
 {
@@ -16,9 +17,13 @@ namespace TheMovieDbApi
     {
         private readonly TheMovieDbApiOptions _apiOptions;
         private readonly HttpClient _httpClient;
+        private readonly ILogger<TheMovieDbApiHttpClient> _logger;
 
-        public TheMovieDbApiHttpClient(TheMovieDbApiOptions apiOptions)
+        public TheMovieDbApiHttpClient(TheMovieDbApiOptions apiOptions, ILogger<TheMovieDbApiHttpClient> logger)
         {
+            _logger = logger;
+            _logger.LogTrace("Created new instance.");
+
             _apiOptions = apiOptions;
             _httpClient = new HttpClient();
 
@@ -40,19 +45,37 @@ namespace TheMovieDbApi
 
         public List<MovieMetaMovieModel> SearchMovieByTitle(string Title)
         {
-           return SearchApiByTitle(Title).Result;
+            try
+            {
+                return SearchApiByTitle(Title).Result ?? new List<MovieMetaMovieModel>();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("SearchMovieByTitle (direct): {0}", e.Message);
+                throw;
+            }
         }
 
         internal async Task<List<MovieMetaMovieModel>> SearchApiByTitle(string Title)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={HttpUtility.UrlEncode(Title)}").ConfigureAwait(false);
-            var requestContent = await requestResult.Content.ReadAsStringAsync();
-            var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
-
+            _logger.LogTrace("Perfoming new search for title: {0} [{1}] [{2}]", Title, _apiOptions.ApiUrl, _httpClient.GetType().Name);
             var resultList = new List<MovieMetaMovieModel>();
-            foreach (var entry in pagedResult.results)
+
+            try
             {
-                resultList.Add(ConvertModel(entry));
+                var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={HttpUtility.UrlEncode(Title)}").ConfigureAwait(false);
+                var requestContent = await requestResult.Content.ReadAsStringAsync();
+                var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
+
+
+                foreach (var entry in pagedResult.results)
+                {
+                    resultList.Add(ConvertModel(entry));
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("SearchApiByTitle: {0}", e.Message);
             }
 
             return resultList;
@@ -72,33 +95,49 @@ namespace TheMovieDbApi
         }
         internal MovieMetaMovieModel ConvertModel (BasicResultModel inputModel)
         {
-            return new MovieMetaMovieModel()
+            try
             {
-                ImgUrl = JoinImagePath(inputModel.PosterPath),
-                BackgroundImgUrl = JoinImagePath(inputModel.BackdropPath),
-                Plot = inputModel.Overview,
-                MetaEngine = _apiOptions.ApiReferenceKey,
-                Title = inputModel.Title,
-                OriginalTitle = inputModel.OrginalTitle,
-                Reference = inputModel.Id.ToString(),
-                Rating = inputModel.VoteAverage.ToString()
-            };
+                return new MovieMetaMovieModel()
+                {
+                    ImgUrl = JoinImagePath(inputModel.PosterPath),
+                    BackgroundImgUrl = JoinImagePath(inputModel.BackdropPath),
+                    Plot = inputModel.Overview,
+                    MetaEngine = _apiOptions.ApiReferenceKey,
+                    Title = inputModel.Title,
+                    OriginalTitle = inputModel.OrginalTitle,
+                    Reference = inputModel.Id.ToString(),
+                    Rating = inputModel.VoteAverage.ToString()
+                };
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("ConvertModel BasicResultModel: {0}", e.Message);
+                throw;
+            }
         }
 
         internal MovieMetaMovieModel ConvertModel(SearchResultModel inputModel)
         {
-            var genresFromFileString = File.ReadAllText("TheMovieDbGenres.json");
-            var genresFromFile = JsonConvert.DeserializeObject<List<GenreModel>>(genresFromFileString);
-
-            var metaModel = ConvertModel((BasicResultModel)inputModel);
-
-            if (inputModel.GenreIds.Count() > 0) metaModel.Genres = new List<string>();
-            foreach (var genre in inputModel.GenreIds)
+            try
             {
-                metaModel.Genres.Add(genresFromFile.FirstOrDefault(g => g.Id == genre).Name);
-            }
+                var genresFromFileString = File.ReadAllText("TheMovieDbGenres.json");
+                var genresFromFile = JsonConvert.DeserializeObject<List<GenreModel>>(genresFromFileString);
 
-            return metaModel;            
+                var metaModel = ConvertModel((BasicResultModel)inputModel);
+
+                if (inputModel.GenreIds.Count() > 0) metaModel.Genres = new List<string>();
+                foreach (var genre in inputModel.GenreIds)
+                {
+                    metaModel.Genres.Add(genresFromFile.FirstOrDefault(g => g.Id == genre).Name);
+                }
+
+                return metaModel;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("ConvertModel SearchResultModel: {0}", e.Message);
+                throw;
+            }    
         }
 
         internal MovieMetaMovieModel ConvertModel(IdSearchResultModel inputModel)
