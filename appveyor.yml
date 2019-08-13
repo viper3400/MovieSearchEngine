@@ -3,7 +3,7 @@ branches:
   only:
   - master
 skip_non_tags: false
-image: Visual Studio 2019
+image: Visual Studio 2017
 clone_depth: 1
 dotnet_csproj:
   patch: true
@@ -25,7 +25,7 @@ before_build:
 
     dotnet restore ./MovieSearchEngineXUnitTests/MovieSearchEngineXUnitTests.csproj --verbosity m
 build:
-  verbosity: minimal
+  verbosity: detailed
 test: off
 artifacts:
 - path: '**\*.nupkg'
