@@ -25,7 +25,7 @@ before_build:
 
     dotnet restore ./MovieSearchEngineXUnitTests/MovieSearchEngineXUnitTests.csproj --verbosity m
 build:
-  verbosity: minimal
+  verbosity: detailed
 test: off
 artifacts:
 - path: '**\*.nupkg'
