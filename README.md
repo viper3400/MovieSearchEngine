@@ -56,7 +56,7 @@ MovieSearchEngine supports The Movie Db (https://www.themoviedb.org/). To use th
       ApiKey = "yoursecretkey",
       ApiUrl = "https://api.themoviedb.org",
       ApiImageBaseUrl = "https://image.tmdb.org/t/p/original",
-      ApiReferenceKey = "TheMovieDb")
+      ApiReferenceKey = "TheMovieDb"
   };
             
 // Init a new instance
