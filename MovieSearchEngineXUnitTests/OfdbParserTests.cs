@@ -110,7 +110,7 @@ namespace MovieSearchEngineXUnitTests
         {
             var input = "<a href=\"plot/258134,619306,Die-Bestimmung---Divergent\"><b>[mehr]</b></a>";
             input = XPathHelper.EscapeJavaScript(input);
-            var expected = "http://www.ofdb.de/plot/258134,619306,Die-Bestimmung---Divergent";
+            var expected = "https://ssl.ofdb.de/plot/258134,619306,Die-Bestimmung---Divergent";
             var SUT = new OfdbParser.OfdbResolvers.OfdbDetailsPlotLinkResolver();
             var actual = SUT.Resolve(input);
 
@@ -211,9 +211,9 @@ namespace MovieSearchEngineXUnitTests
         [Trait("Category", CAT_OFFLINE)]
         public void SubstitutePlaceHolderTest()
         {
-            var inputUrl = "http://www.ofdb.de/film/{placeholder},";
+            var inputUrl = "https://www.ofdb.de/film/{placeholder},";
             var inputReplace = "12345";
-            var expected = "http://www.ofdb.de/film/12345,";
+            var expected = "https://www.ofdb.de/film/12345,";
             var actual = OfdbSearch.SubstitutePlaceHolder(inputUrl, inputReplace);
             Assert.Equal(expected, actual);
         }
