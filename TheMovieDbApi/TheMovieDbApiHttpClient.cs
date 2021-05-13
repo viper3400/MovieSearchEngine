@@ -60,29 +60,34 @@ namespace TheMovieDbApi
 
         internal async Task<MovieMetaMovieModel> SearchApiById(string id)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
-            var requestContent = await requestResult.Content.ReadAsStringAsync();
+            var requestDetails = _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
+            var requestActors = GetActorsForMovie(id);
+            Task.WaitAll(requestDetails, requestActors);
+            var requestContent = await requestDetails.Result.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<IdSearchResultModel>(requestContent);
 
-            // get actos if any
             var metaModel = ConvertModel(result);
-            metaModel.Actors = await GetActorsForMovie(id);
+            metaModel.Actors = requestActors.Result;
+            metaModel.Length = result.Runtime.ToString();
+            metaModel.ProductionCountry = string.Join(", ", result.ProductionCountries.Select(p => p.Name));
 
             return metaModel;
         }
         internal MovieMetaMovieModel ConvertModel (BasicResultModel inputModel)
         {
+            var metaEnginge = _apiOptions.ApiReferenceKey;
+
             return new MovieMetaMovieModel()
             {
                 ImgUrl = JoinImagePath(inputModel.PosterPath),
                 BackgroundImgUrl = JoinImagePath(inputModel.BackdropPath),
                 Plot = inputModel.Overview,
-                MetaEngine = _apiOptions.ApiReferenceKey,
+                MetaEngine = metaEnginge,
                 Title = inputModel.Title,
                 OriginalTitle = inputModel.OrginalTitle,
-                Reference = inputModel.Id.ToString(),
+                Reference = $"{metaEnginge}:{inputModel.Id.ToString()}",
                 Rating = inputModel.VoteAverage.ToString()
-            };
+        };
         }
 
         internal MovieMetaMovieModel ConvertModel(SearchResultModel inputModel)
@@ -98,7 +103,7 @@ namespace TheMovieDbApi
                 metaModel.Genres.Add(genresFromFile.FirstOrDefault(g => g.Id == genre).Name);
             }
 
-            return metaModel;            
+            return metaModel;
         }
 
         internal MovieMetaMovieModel ConvertModel(IdSearchResultModel inputModel)

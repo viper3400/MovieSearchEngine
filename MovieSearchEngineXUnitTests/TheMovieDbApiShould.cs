@@ -35,13 +35,17 @@ namespace MovieSearchEngineXUnitTests
         {           
             var client =  new TheMovieDbApiHttpClient(_apiOptions);
             var result = client.SearchMovieByTitle("Drachenzähmen leicht gemacht");
-            var actual = result.FirstOrDefault(m => m.Reference == "166428");
+            var actual = result.FirstOrDefault(m => m.Reference == "TheMovieDb:166428");
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
             Assert.Equal("Drachenzähmen leicht gemacht 3: Die geheime Welt", actual.Title);
             Assert.Contains("Abenteuer", actual.Genres);
             Assert.Contains("Animation", actual.Genres);
             Assert.Contains("Familie", actual.Genres);
+            Assert.Equal("TheMovieDb", actual.MetaEngine);
+            Assert.Equal("7.8", actual.Rating);
+            Assert.Equal("TheMovieDb:166428", actual.Reference);
+            Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
             Assert.Equal(3, actual.Genres.Count());
         }
 
@@ -62,8 +66,9 @@ namespace MovieSearchEngineXUnitTests
         [Fact]
         public void SearchMovieById()
         {
+            //https://api.themoviedb.org/3//movie/166428?api_key=xxxc&language=de-DE
             var client = new TheMovieDbApiHttpClient(_apiOptions);
-            var actual = client.SearchMovieByEngineId("166428").FirstOrDefault();            
+            var actual = client.SearchMovieByEngineId("166428").FirstOrDefault();
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
             Assert.Equal("Drachenzähmen leicht gemacht 3: Die geheime Welt", actual.Title);
@@ -72,7 +77,14 @@ namespace MovieSearchEngineXUnitTests
             Assert.Contains("Abenteuer", actual.Genres);
             Assert.Contains("Animation", actual.Genres);
             Assert.Contains("Familie", actual.Genres);
+            Assert.Equal("TheMovieDb", actual.MetaEngine);
+            Assert.Contains("America Ferrera", actual.Actors.Select(a => a.ActorName));
+            Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
+            Assert.Equal("104", actual.Length);
+            Assert.Equal("7.8", actual.Rating);
+            Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
+            Assert.Equal("Japan, United States of America", actual.ProductionCountry);
 
             // Check actors
             Assert.Equal(20, actual.Actors.Count());
