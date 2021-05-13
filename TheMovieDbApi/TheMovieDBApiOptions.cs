@@ -11,5 +11,6 @@ namespace TheMovieDbApi
         public string ApiUrl { get; set; }
         public string ApiImageBaseUrl { get; set; }
         public string ApiReferenceKey { get; set; }
+        public string ApiLanguageCode { get; set; }
     }
 }

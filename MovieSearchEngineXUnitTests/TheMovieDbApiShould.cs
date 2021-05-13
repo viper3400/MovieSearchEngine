@@ -46,6 +46,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("7.8", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
+            Assert.NotEmpty(actual.Plot);
             Assert.Equal(3, actual.Genres.Count());
         }
 
@@ -85,6 +86,37 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
             Assert.Equal("Japan, United States of America", actual.ProductionCountry);
+            Assert.NotEmpty(actual.Plot);
+
+            // Check actors
+            Assert.Equal(20, actual.Actors.Count());
+            Assert.Equal("Jay Baruchel", actual.Actors.FirstOrDefault(a => a.Reference == "5c6d150b0e0a262c999fbcb3").ActorName);
+        }
+
+        [Fact]
+        public void SearchMovieByIdinEnLanguage()
+        {
+            //https://api.themoviedb.org/3//movie/166428?api_key=xxxc&language=en
+            _apiOptions.ApiLanguageCode = "en";
+            var client = new TheMovieDbApiHttpClient(_apiOptions);
+            var actual = client.SearchMovieByEngineId("166428").FirstOrDefault();
+
+            Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
+            Assert.Equal("How to Train Your Dragon: The Hidden World", actual.Title);
+
+            // Check genres
+            Assert.Contains("Adventure", actual.Genres);
+            Assert.Contains("Animation", actual.Genres);
+            Assert.Contains("Family", actual.Genres);
+            Assert.Equal("TheMovieDb", actual.MetaEngine);
+            Assert.Contains("America Ferrera", actual.Actors.Select(a => a.ActorName));
+            Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
+            Assert.Equal("104", actual.Length);
+            Assert.Equal("7.8", actual.Rating);
+            Assert.Equal("TheMovieDb:166428", actual.Reference);
+            Assert.Equal(3, actual.Genres.Count());
+            Assert.Equal("Japan, United States of America", actual.ProductionCountry);
+            Assert.NotEmpty(actual.Plot);
 
             // Check actors
             Assert.Equal(20, actual.Actors.Count());

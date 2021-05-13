@@ -41,6 +41,7 @@ You probably have to search this way round for getting a match.
 
 If there is no result at all you will get an empty list.
 
+
 ## Data Model
 
 ![Model](https://github.com/viper3400/MovieSearchEngine/blob/master/ClassDiagram.png "Model")
@@ -56,7 +57,8 @@ MovieSearchEngine supports The Movie Db (https://www.themoviedb.org/). To use th
       ApiKey = "yoursecretkey",
       ApiUrl = "https://api.themoviedb.org",
       ApiImageBaseUrl = "https://image.tmdb.org/t/p/original",
-      ApiReferenceKey = "TheMovieDb"
+      ApiReferenceKey = "TheMovieDb",
+      ApiLanguageCode = "en"
   };
             
 // Init a new instance
@@ -71,6 +73,10 @@ List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitl
 // Search a movie by engine id
 List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
 ```
+
+ApiLanguageCode (Optional): For language configuration see https://developers.themoviedb.org/3/getting-started/languages.
+
+`SearchMovieByTitle` will not deliver data for `length` and `productionCountry`, you will have to do a `SearchMovieByEngineId` afterwards to retrieve this data.
 
 ## Legacy Branch
 

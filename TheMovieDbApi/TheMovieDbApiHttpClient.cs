@@ -16,10 +16,12 @@ namespace TheMovieDbApi
     {
         private readonly TheMovieDbApiOptions _apiOptions;
         private readonly HttpClient _httpClient;
+        private readonly string _languageCode;
 
         public TheMovieDbApiHttpClient(TheMovieDbApiOptions apiOptions)
         {
             _apiOptions = apiOptions;
+            _languageCode = string.IsNullOrWhiteSpace(apiOptions.ApiLanguageCode) ? "de-DE" : apiOptions.ApiLanguageCode;
             _httpClient = new HttpClient();
 
             _httpClient.BaseAddress = new System.Uri(_apiOptions.ApiUrl);
@@ -45,7 +47,7 @@ namespace TheMovieDbApi
 
         internal async Task<List<MovieMetaMovieModel>> SearchApiByTitle(string Title)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language=de-DE&query={HttpUtility.UrlEncode(Title)}").ConfigureAwait(false);
+            var requestResult = await _httpClient.GetAsync($"/3/search/movie?api_key={_apiOptions.ApiKey}&language={_languageCode}&query={HttpUtility.UrlEncode(Title)}").ConfigureAwait(false);
             var requestContent = await requestResult.Content.ReadAsStringAsync();
             var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
 
@@ -60,7 +62,7 @@ namespace TheMovieDbApi
 
         internal async Task<MovieMetaMovieModel> SearchApiById(string id)
         {
-            var requestDetails = _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language=de-DE");
+            var requestDetails = _httpClient.GetAsync($"/3/movie/{id}?api_key={_apiOptions.ApiKey}&language={_languageCode}");
             var requestActors = GetActorsForMovie(id);
             Task.WaitAll(requestDetails, requestActors);
             var requestContent = await requestDetails.Result.Content.ReadAsStringAsync();
@@ -123,7 +125,7 @@ namespace TheMovieDbApi
 
         internal async Task<List<MovieMetaActorModel>> GetActorsForMovie(string id)
         {
-            var requestResult = await _httpClient.GetAsync($"/3/movie/{id}/credits?api_key={_apiOptions.ApiKey}&language=de-DE");
+            var requestResult = await _httpClient.GetAsync($"/3/movie/{id}/credits?api_key={_apiOptions.ApiKey}&language={_languageCode}");
             var requestContent = await requestResult.Content.ReadAsStringAsync();
             var pagedResult = JsonConvert.DeserializeObject<ActorResultModel>(requestContent);
 
