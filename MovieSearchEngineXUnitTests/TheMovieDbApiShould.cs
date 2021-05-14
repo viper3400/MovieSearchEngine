@@ -48,6 +48,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
             Assert.NotEmpty(actual.Plot);
             Assert.Equal(3, actual.Genres.Count());
+            Assert.Equal("2019", actual.Year);
         }
 
         [Fact]
@@ -91,6 +92,7 @@ namespace MovieSearchEngineXUnitTests
             // Check actors
             Assert.Equal(20, actual.Actors.Count());
             Assert.Equal("Jay Baruchel", actual.Actors.FirstOrDefault(a => a.Reference == "5c6d150b0e0a262c999fbcb3").ActorName);
+            Assert.Equal("2019", actual.Year);
         }
 
         [Fact]
@@ -121,6 +123,8 @@ namespace MovieSearchEngineXUnitTests
             // Check actors
             Assert.Equal(20, actual.Actors.Count());
             Assert.Equal("Jay Baruchel", actual.Actors.FirstOrDefault(a => a.Reference == "5c6d150b0e0a262c999fbcb3").ActorName);
+
+            Assert.Equal("2019", actual.Year);
         }
     }
 }

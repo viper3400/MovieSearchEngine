@@ -88,7 +88,8 @@ namespace TheMovieDbApi
                 Title = inputModel.Title,
                 OriginalTitle = inputModel.OrginalTitle,
                 Reference = $"{metaEnginge}:{inputModel.Id.ToString()}",
-                Rating = inputModel.VoteAverage.ToString()
+                Rating = inputModel.VoteAverage.ToString(),
+                Year = DateTime.Parse(inputModel.ReleaseDate).Year.ToString()
         };
         }
 

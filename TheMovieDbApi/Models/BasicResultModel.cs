@@ -16,7 +16,7 @@ namespace TheMovieDbApi.Models
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
-        [JsonProperty("releas_date")]
+        [JsonProperty("release_date")]
         public string ReleaseDate { get; set; }
 
         [JsonProperty("id")]
