@@ -52,10 +52,12 @@ namespace TheMovieDbApi
             var pagedResult = JsonConvert.DeserializeObject<PagedSearchResultModel>(requestContent);
 
             var resultList = new List<MovieMetaMovieModel>();
-            foreach (var entry in pagedResult.results)
+
+            Parallel.ForEach(pagedResult.results, entry =>
             {
-                resultList.Add(ConvertModel(entry));
-            }
+                var details = SearchApiById(entry.Id.ToString());
+                resultList.Add(details.Result);
+            });
 
             return resultList;
         }
