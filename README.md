@@ -2,11 +2,7 @@
 
 ## Release Notes
 
-### 2.1.0
-#### Data Model Changes
-* New enginge for The Movie Db
-* MovieMetaMovieModel has new fields "Barcode" and "BackgroundImgUrl"
-** Be aware that not all enginges deliver all fields
+See GitHub Milestones and associated issues.
 
 ## Ofdb
 
@@ -76,7 +72,7 @@ List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngi
 
 ApiLanguageCode (Optional): For language configuration see https://developers.themoviedb.org/3/getting-started/languages.
 
-`SearchMovieByTitle` will not deliver data for `length` and `productionCountry`, you will have to do a `SearchMovieByEngineId` afterwards to retrieve this data.
+Be aware, that The Movie Db has no edition concept as Ofdb.
 
 ## Legacy Branch
 
