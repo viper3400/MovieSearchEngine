@@ -146,5 +146,16 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(20, actual.Count());
             Assert.All(actual, s => Assert.Contains("Batman", s.Title));
         }
+
+        [Fact]
+        public void SearchMovieByIdWithoutRuntime()
+        {
+            var client = new TheMovieDbApiHttpClient(_apiOptions);
+            var actual = client.SearchMovieByEngineId("461049").FirstOrDefault();
+            Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
+            Assert.Equal("Im Kreis der Iris", actual.Title);
+            Assert.Equal("", actual.Length);
+
+        }
     }
 }

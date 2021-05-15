@@ -14,6 +14,6 @@ namespace TheMovieDbApi.Models
         public IEnumerable<ProductionCountryModel> ProductionCountries { get; set; }
 
         [JsonProperty("runtime")]
-        public int Runtime { get; set; }
+        public int? Runtime { get; set; }
     }
 }
