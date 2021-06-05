@@ -80,6 +80,15 @@ namespace TheMovieDbApi
         internal MovieMetaMovieModel ConvertModel (BasicResultModel inputModel)
         {
             var metaEnginge = _apiOptions.ApiReferenceKey;
+            var year = "";
+            try
+            {
+                year = DateTime.Parse(inputModel.ReleaseDate).Year.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             return new MovieMetaMovieModel()
             {
@@ -91,7 +100,7 @@ namespace TheMovieDbApi
                 OriginalTitle = inputModel.OrginalTitle,
                 Reference = $"{metaEnginge}:{inputModel.Id.ToString()}",
                 Rating = inputModel.VoteAverage.ToString(),
-                Year = DateTime.Parse(inputModel.ReleaseDate).Year.ToString()
+                Year = year
         };
         }
 

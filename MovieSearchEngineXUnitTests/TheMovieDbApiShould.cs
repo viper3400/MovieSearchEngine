@@ -74,6 +74,19 @@ namespace MovieSearchEngineXUnitTests
         }
 
         [Fact]
+        public void SearchMovieByTitleWithoutProductionYear()
+        {
+            var client = new TheMovieDbApiHttpClient(_apiOptions);
+            var result = client.SearchMovieByTitle("The Flash II: Revenge of the Trickster");
+            var actual = result.FirstOrDefault(m => m.Reference == "TheMovieDb:824287");
+
+            Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
+            Assert.Equal("The Flash II: Revenge of the Trickster", actual.Title);
+
+            Assert.Equal("", actual.Year);
+        }
+
+        [Fact]
         public void SearchMovieById()
         {
             //https://api.themoviedb.org/3//movie/166428?api_key=xxxc&language=de-DE
