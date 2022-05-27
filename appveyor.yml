@@ -23,9 +23,7 @@ before_build:
 
     dotnet restore ./TheMovieDbApi/TheMovieDbApi.csproj --verbosity m
 
-    dotnet restore ./MovieSearchEngineXUnitTests/MovieSearchEngineXUnitTests.csproj --verbosity m
-    
-    nuget update ./MovieMetaEngineGUI/MovieMetaEngineGUI.csproj
+    dotnet restore ./MovieSearchEngineXUnitTests/MovieSearchEngineXUnitTests.csproj --verbosity m    
 build:
   verbosity: minimal
 test: off
