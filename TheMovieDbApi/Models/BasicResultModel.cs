@@ -10,7 +10,7 @@ namespace TheMovieDbApi.Models
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
 
-        [JsonProperty("adul")]
+        [JsonProperty("adult")]
         public bool? Adult { get; set; }
 
         [JsonProperty("overview")]

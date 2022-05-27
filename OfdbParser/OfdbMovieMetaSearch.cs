@@ -29,7 +29,7 @@ namespace OfdbParser
                         Title = s.Title,
                         Reference = s.EngineId,
                         Year = s.Year,
-                        ImgUrl = "https://ssl.ofdb.de/" + s.CoverImage
+                        ImgUrl = "https://ofdb.de/" + s.CoverImage
                     });
             }
 

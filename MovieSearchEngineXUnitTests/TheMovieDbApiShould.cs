@@ -50,7 +50,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("7.8", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
-            Assert.Equal("Japan, United States of America", actual.ProductionCountry);
+            Assert.Equal("United States of America", actual.ProductionCountry);
             Assert.NotEmpty(actual.Plot);
 
             // Check actors
@@ -78,12 +78,12 @@ namespace MovieSearchEngineXUnitTests
         {
             var client = new TheMovieDbApiHttpClient(_apiOptions);
             var result = client.SearchMovieByTitle("The Flash II: Revenge of the Trickster");
-            var actual = result.FirstOrDefault(m => m.Reference == "TheMovieDb:824287");
+            var actual = result.FirstOrDefault(m => m.Reference == "TheMovieDb:222619");
 
             Assert.IsType<MovieMetaEngine.MovieMetaMovieModel>(actual);
-            Assert.Equal("The Flash II: Revenge of the Trickster", actual.Title);
+            Assert.Equal("The Flash 2 - Roter Blitz - Die Rache des Tricksers", actual.Title);
 
-            Assert.Equal("", actual.Year);
+            Assert.Equal("1991", actual.Year);
         }
 
         [Fact]
@@ -107,7 +107,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("7.8", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
-            Assert.Equal("Japan, United States of America", actual.ProductionCountry);
+            Assert.Equal("United States of America", actual.ProductionCountry);
             Assert.NotEmpty(actual.Plot);
 
             // Check actors
@@ -138,7 +138,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("7.8", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
-            Assert.Equal("Japan, United States of America", actual.ProductionCountry);
+            Assert.Equal("United States of America", actual.ProductionCountry);
             Assert.NotEmpty(actual.Plot);
 
             // Check actors

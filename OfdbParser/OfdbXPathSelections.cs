@@ -20,7 +20,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchTitleResultTitle,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
                     //XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[following-sibling::i[text()=\"Ungef&auml;hre Ergebnisse\"]]",
                     XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[contains(@href,\"film/\")]",
                     Resolver = new OfdbSearchTitleTitleResolver()
@@ -31,7 +31,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchTitleResultEngineId,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
                     //XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[following-sibling::i[text()=\"Ungef&auml;hre Ergebnisse\"]]",
                     XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[contains(@href,\"film/\")]",
                     Resolver = new OfdbSearchTitleReferenceResolver()
@@ -42,7 +42,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchTitleResultYear,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
                     //XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[following-sibling::i[text()=\"Ungef&auml;hre Ergebnisse\"]]",
                     XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[contains(@href,\"film/\")]",
                     Resolver = new OfdbSearchTitleYearResolver()
@@ -53,7 +53,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchTitleResultCoverImage,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}",
                     //XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[following-sibling::i[text()=\"Ungef&auml;hre Ergebnisse\"]]",
                     XPath = "/html//i[text()=\"Exakte Ergebnisse\"]/following-sibling::a[contains(@href,\"film/\")]",
                     Resolver = new OfdbSearchTitleCoverImageResolver()
@@ -67,7 +67,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchBarcodeResultTitle,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
                     XPath = "/html//b[text()=\"EAN/UPC:\"]/following-sibling::a[contains(@href,\"film/\") and position()=1]/b/text()",
                     Resolver = new OfdbBarcodeSearchTitleResolver()
                 });
@@ -77,7 +77,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchBarcodeResultYear,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
                     XPath = "/html//b[text()=\"EAN/UPC:\"]/following-sibling::a[contains(@href,\"film/\") and position()=1]/b/text()",
                     Resolver = new OfdbBarcodeSearchYearResolver()
                 });
@@ -87,7 +87,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchBarodeResultCoverImage,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
                     XPath = "/html//b[text()=\"EAN/UPC:\"]/following-sibling::a[contains(@href,\"fassung&fid\")]",
                     Resolver = new OfdbBarcodeSearchCoverImageResolver()
                 });
@@ -97,7 +97,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.SearchBarcodeResultEngineId,
-                    Url = "https://ssl.ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
+                    Url = "https://ofdb.de/view.php?page=suchergebnis&SText={placeholder}&Kat=EAN",
                     XPath = "/html//b[text()=\"EAN/UPC:\"]/following-sibling::a[contains(@href,\"fassung&fid\")]",
                     Resolver = new OfdbBarcodeSearchReferenceResolver()
                 });
@@ -111,7 +111,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsMovieTitle,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = " /html//h1[@itemprop=\"name\"]/font/b/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });
@@ -121,7 +121,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsProductionCounty,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//a[contains(@href,\"view.php?page=blaettern&Kat=Land&Text=\")]/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });
@@ -131,7 +131,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsYear,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//a[contains(@href,\"view.php?page=blaettern&Kat=Jahr&Text=\")]/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });
@@ -141,7 +141,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsGenres,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//span[@itemprop=\"genre\"]/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });
@@ -151,7 +151,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsPlot,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//a[starts-with(@href,\"plot/\")]",
                     Resolver = new OfdbDetailsPlotResolver()
                 });
@@ -161,7 +161,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsActors,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//a[@itemprop=\"actor\"]/span[@itemprop=\"name\"]/text()",
                     Resolver = new OfdbDetailsActorsResolver()
                 });
@@ -171,7 +171,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsCoverImage,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//img[@itemprop=\"image\"]",
                     Resolver = new OfdbDetailsCoverImageResolver()
                 });
@@ -181,7 +181,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetailsEditions,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//div[text()=\"Fassungen\"]/parent::node()/parent::node()/parent::node()/tr[2]/td[2]/table/tr//a/parent::node()/parent::node()/parent::node()/parent::node()",
                     Resolver = new OfdbDetailsEdtionsResolver()
                 });
@@ -191,7 +191,7 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.DetatilsRating,
-                    Url = "https://ssl.ofdb.de/film/{placeholder},",
+                    Url = "https://ofdb.de/film/{placeholder},",
                     XPath = "/html//span[@itemprop=\"ratingValue\"]/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });
@@ -204,8 +204,8 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.EditionRuntime,
-                    //Url = "https://ssl.ofdb.de/view.php?page=fassung&fid=258134&vid=386665,",
-                    Url = "https://ssl.ofdb.de/view.php?page=fassung{placeholder},",
+                    //Url = "https://ofdb.de/view.php?page=fassung&fid=258134&vid=386665,",
+                    Url = "https://ofdb.de/view.php?page=fassung{placeholder},",
                     XPath = "/html//font[text()=\"Laufzeit:\"]/parent::node()/parent::node()//b/text()",
                     Resolver = new OfdbEditionRuntimeResolver()
                 });
@@ -214,8 +214,8 @@ namespace OfdbParser
                 new XPathSelection
                 {
                     Name = XPathSelectionName.EditionBarcode,
-                    //Url = "https://ssl.ofdb.de/view.php?page=fassung&fid=258134&vid=386665,",
-                    Url = "https://ssl.ofdb.de/view.php?page=fassung{placeholder},",
+                    //Url = "https://ofdb.de/view.php?page=fassung&fid=258134&vid=386665,",
+                    Url = "https://ofdb.de/view.php?page=fassung{placeholder},",
                     XPath = "/html//a[text()=\"EAN/UPC\"]/parent::node()/parent::node()/parent::node()//b/text()",
                     Resolver = new OfdbPassThroughResolver()
                 });

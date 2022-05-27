@@ -13,7 +13,7 @@ namespace OfdbParser.OfdbResolvers
         {
             var regex = new Regex("src=\"(.+?)\"");
             var match = regex.Match(SourceString);
-            var result = match.Success ? "https://ssl.ofdb.de/" + match.Groups[1].Value : "";
+            var result = match.Success ? "https://ofdb.de/" + match.Groups[1].Value : "";
             return result;
         }
 
