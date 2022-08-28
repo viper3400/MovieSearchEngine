@@ -66,7 +66,9 @@ namespace MovieMetaEngineGUI
             try
             {
                 //MovieMetaEngine.IMovieMetaSearch search = new OfdbWebGatewayConnector.OfdbWgMovieMetaSearch();
-                foreach (var entry in _search.SearchMovieByTitle(tbSearch.Text))
+                var result = _search.SearchMovieByTitle(tbSearch.Text);
+                listBox1.Items.Add(result.Count);
+                foreach (var entry in result)
                 {
                     listBox1.Items.Add(entry.Title + " - " + entry.Reference + " - " + entry.Year + " - " + entry.ImgUrl + " -" + entry.BackgroundImgUrl);
                 }
@@ -135,6 +137,16 @@ namespace MovieMetaEngineGUI
         {
             var text = ((ListBox)sender).SelectedItem.ToString();
             Clipboard.SetText(text);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbApiKey_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
        
