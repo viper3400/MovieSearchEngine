@@ -1,4 +1,12 @@
-﻿Please read and accept this terms:
+﻿Update July 2023: 
+
+Due to a redesign of OFDB it's not longer working with this library!
+Me for myself, I meanwhile just use TMDB.
+I always knew, the OFDB support was very brittle.
+I decided to retire the OFDB support.
+
+
+Please read and accept this terms:
 
 - This is intended for PERSONAL USE ONLY
 - You should RESPECT the conditions for using ofdb.de (https://ofdb.de/view.php?page=faq#a32)
