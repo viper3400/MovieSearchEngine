@@ -12,12 +12,15 @@ PLEASE USE THE TMDB INTERFACE OF THIS LIB!
 
 
 Due to a redesign of OFDB it's not longer working with this library!
+
 Me for myself, I meanwhile just use TMDB.
+
 I always knew, the OFDB support was very brittle.
+
 I decided to retire the OFDB support.
 
 For now, I just disabled the unit tests.
-Depending on some personal project I'm currently thinking about removing the code 
+Depending on some personal projects I'm currently thinking about removing the code 
 with a next major version.
 
 Thanks for understanding.
