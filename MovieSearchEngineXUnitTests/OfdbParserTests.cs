@@ -12,12 +12,13 @@ namespace MovieSearchEngineXUnitTests
 
         const string CAT_OFFLINE = "OfdbParserTest_OFFLINE";
         const string CAT_ONLINE = "OfdbParserTest_ONLINE";
+        const string OFDB_NOT_SUPPORTED = "Ofdb not supported";
 
         private string searchResultString = "<a href=\"film/257582,Der-Kreis\" onmouseover=\"Tip('<img src=&quot;images/film/na.gif&quot; width=&quot;120&quot; height=&quot;168&quot;>',SHADOW,true)\">Kreis, Der<font size=\"1\"> / Kreis, Der</font> (1964)</a>";
         private string searchResultString2 = "<a href=\"film/161764,Fast-&-Furious---Neues-Modell-Originalteile\" onmouseover=\"Tip('&lt;img src=&quot;images/film/161/161764.jpg&quot; width=&quot;120&quot; height=&quot;170&quot;&gt;',SHADOW,true)\">Fast & Furious - Neues Modell. Originalteile.<font size=\"1\"> / Fast & Furious</font> (2009)</a>";
 
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbReferenceResolverTest()
         {
@@ -29,7 +30,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleTitleResolverTest_1()
         {
@@ -42,7 +43,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleTitleResolverTest_2()
         {
@@ -53,7 +54,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleReferenceResolverTest_1()
         {
@@ -66,7 +67,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleReferenceResolverTest_2()
         {
@@ -78,7 +79,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleReferenceYearTest_1()
         {
@@ -91,7 +92,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleReferenceYearTest_2()
         {
@@ -104,7 +105,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbDetailsPlotLinkResolverTest()
         {
@@ -117,7 +118,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbDetailsCoverImageResolverTest()
         {
@@ -130,7 +131,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbBarcodeSearchTitleResolverTest()
         {
@@ -142,7 +143,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbBarcodeSearchYearResolverTest()
         {
@@ -154,7 +155,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbBarcodeSearchReferenceResolverTest()
         {
@@ -170,7 +171,7 @@ namespace MovieSearchEngineXUnitTests
 
 
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleCoverImageTest_1()
         {
@@ -183,7 +184,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearchTitleCoverImageTest_2()
         {
@@ -196,7 +197,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-     [Fact]
+     [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void EscapeJavaScriptTest()
         {
@@ -207,7 +208,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SubstitutePlaceHolderTest()
         {
@@ -219,7 +220,7 @@ namespace MovieSearchEngineXUnitTests
         }
 
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearch_SearchByTitleTest()
         {
@@ -230,7 +231,7 @@ namespace MovieSearchEngineXUnitTests
 
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbSearch_SearchByTitleWithoutResultTest()
         {
@@ -240,7 +241,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Empty(result);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SearchMovieByEngineIdTest()
         {
@@ -254,7 +255,7 @@ namespace MovieSearchEngineXUnitTests
         }
 
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SearchMovieByEngineIdWithMissingBarcodeTest()
         {
@@ -266,7 +267,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Null(actual.FirstOrDefault().Barcode);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SearchMovieByEngineIdWithMissingPlotTest()
         {
@@ -278,7 +279,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal("Kirschblüten und rote Bohnen", actual.FirstOrDefault().Title);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SearchMovieByEngineIdWithInvalidEditionTest()
         {
@@ -289,7 +290,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Null(actual.FirstOrDefault().Length);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void SearchMovieByBarcodeTest()
         {
@@ -309,7 +310,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.True(checkRating, String.Format("Rating was ", rating));
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbDetailsPlotCompleteMultiLine()
         {
@@ -328,7 +329,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Equal(expectedPlotBuilder.ToString(), actual.FirstOrDefault().Plot);
         }
 
-        [Fact]
+        [Fact(Skip = OFDB_NOT_SUPPORTED)]
         [Trait("Category", CAT_OFFLINE)]
         public void OfdbDetailsPlotCompleteSingleLine()
         {

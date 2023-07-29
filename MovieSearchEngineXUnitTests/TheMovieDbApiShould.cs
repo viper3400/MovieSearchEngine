@@ -47,7 +47,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Contains("America Ferrera", actual.Actors.Select(a => a.ActorName));
             Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
             Assert.Equal("104", actual.Length);
-            Assert.Equal("7.771", actual.Rating);
+            Assert.Equal("7.765", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
             Assert.Equal("United States of America", actual.ProductionCountry);
@@ -104,7 +104,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Contains("America Ferrera", actual.Actors.Select(a => a.ActorName));
             Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
             Assert.Equal("104", actual.Length);
-            Assert.Equal("7.771", actual.Rating);
+            Assert.Equal("7.765", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
             Assert.Equal("United States of America", actual.ProductionCountry);
@@ -135,7 +135,7 @@ namespace MovieSearchEngineXUnitTests
             Assert.Contains("America Ferrera", actual.Actors.Select(a => a.ActorName));
             Assert.Equal("How to Train Your Dragon: The Hidden World", actual.OriginalTitle);
             Assert.Equal("104", actual.Length);
-            Assert.Equal("7.771", actual.Rating);
+            Assert.Equal("7.765", actual.Rating);
             Assert.Equal("TheMovieDb:166428", actual.Reference);
             Assert.Equal(3, actual.Genres.Count());
             Assert.Equal("United States of America", actual.ProductionCountry);

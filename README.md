@@ -4,39 +4,26 @@
 
 See GitHub Milestones and associated issues.
 
-## Ofdb
+## Update July 2023
 
-Please read and accept this terms:
+Update July 2023: 
 
-* This is intended for PERSONAL USE ONLY
-* You should RESPECT the conditions for using ofdb.de (https://ofdb.de/view.php?page=faq#a32)
-* You should AVOID extensive usage of this code (Catch data only if it's neccessary to avoid high loads on ofdb servers.)
-* Visit https://www.ofdb.de once in a while and honour the great work of the OFDB team.
-* This is a personal experiment, not an API to OFDB, neither an unofficial nor an official. It may break at any time.
+PLEASE USE THE TMDB INTERFACE OF THIS LIB!
 
-Usage:
 
-```csharp
-// Init a new instance
-MovieMetaEngine.IMovieMetaSearch search = new OfdbParser.OfdbMovieMetaSearch();
+Due to a redesign of OFDB it's not longer working with this library!
 
-// Search a movie by barcode
-List<MovieMetaEngine.MovieMetaMovieModel> barcodeResult = search.SearchMovieByBarcode("EANBarcode");
+Me for myself, I meanwhile just use TMDB.
 
-// Search a movie by title
-List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitle("MovieTitle");
+I always knew, the OFDB support was very brittle.
 
-// Search a movie by engine id
-List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
-```
-### Search By Title
+I decided to retire the OFDB support.
 
-If you search a movie by its title, be aware that you probably need the complete title and the correct spelling and synthax.
-When using OFDB the movie "The Avengers" is stored as "Avengers, The" for example. 
-You probably have to search this way round for getting a match.
+For now, I just disabled the unit tests.
+Depending on some personal projects I'm currently thinking about removing the code 
+with a next major version.
 
-If there is no result at all you will get an empty list.
-
+Thanks for understanding.
 
 ## Data Model
 
@@ -104,3 +91,37 @@ This piece of work makes usage of:
 * Dapplo.Log: https://github.com/dapplo/Dapplo.Log
 
 Licenses may differ.
+
+## Ofdb (retired, unsupported)
+
+Please read and accept this terms:
+
+* This is intended for PERSONAL USE ONLY
+* You should RESPECT the conditions for using ofdb.de (https://ofdb.de/view.php?page=faq#a32)
+* You should AVOID extensive usage of this code (Catch data only if it's neccessary to avoid high loads on ofdb servers.)
+* Visit https://www.ofdb.de once in a while and honour the great work of the OFDB team.
+* This is a personal experiment, not an API to OFDB, neither an unofficial nor an official. It may break at any time.
+
+Usage:
+
+```csharp
+// Init a new instance
+MovieMetaEngine.IMovieMetaSearch search = new OfdbParser.OfdbMovieMetaSearch();
+
+// Search a movie by barcode
+List<MovieMetaEngine.MovieMetaMovieModel> barcodeResult = search.SearchMovieByBarcode("EANBarcode");
+
+// Search a movie by title
+List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByTitle("MovieTitle");
+
+// Search a movie by engine id
+List<MovieMetaEngine.MovieMetaMovieModel> titleResult = search.SearchMovieByEngineId("EngineId");
+```
+### Search By Title
+
+If you search a movie by its title, be aware that you probably need the complete title and the correct spelling and synthax.
+When using OFDB the movie "The Avengers" is stored as "Avengers, The" for example. 
+You probably have to search this way round for getting a match.
+
+If there is no result at all you will get an empty list.
+
